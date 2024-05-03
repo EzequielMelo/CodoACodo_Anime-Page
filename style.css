@@ -1,17 +1,25 @@
 
+.nav-icons a{
+    filter: invert(100%);
+    padding: 0;
+}
 
+.nav-icons li{
+    margin-right: 10px;
+    padding: 0;
+}
 .carousel-caption {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     width: 100%;
     padding: 20px;
     color: white;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     height: 100%;
 }
 
@@ -25,14 +33,24 @@
     margin-top: 5%;
 }
 
-.text-limit {
-    max-width: 30%;
-    overflow: hidden;
+.carousel-control-prev, .carousel-control-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 9%; /* Ajustar la altura del botón al 100% del contenedor */
 }
 
-.carousel-buttons {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.carousel-indicators button {
+    background-color: transparent; /* Fondo transparente para los indicadores */
+    border: none; /* Elimina el borde */
+    width: 15px; /* Ancho del indicador */
+    height: 15px; /* Altura del indicador */
+    margin: 0 5px; /* Espaciado entre los indicadores */
+    border-radius: 50%; /* Forma redondeada */
+    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+.carousel-indicators button.active {
+    background-color: #dc3545; /* Rojo de bootstrap (btn-danger) */
 }
