@@ -40,17 +40,3 @@
     height: 90%;
     width: 9%; /* Ajustar la altura del botón al 100% del contenedor */
 }
-
-.carousel-indicators button {
-    background-color: transparent; /* Fondo transparente para los indicadores */
-    border: none; /* Elimina el borde */
-    width: 15px; /* Ancho del indicador */
-    height: 15px; /* Altura del indicador */
-    margin: 0 5px; /* Espaciado entre los indicadores */
-    border-radius: 50%; /* Forma redondeada */
-    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
-}
-
-.carousel-indicators button.active {
-    background-color: #dc3545; /* Rojo de bootstrap (btn-danger) */
-}
