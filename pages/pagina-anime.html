@@ -26,16 +26,20 @@
                       <span class="bi bi-search nav-icon" onclick="toggleSearchInput()"></span>
                   </div>
               </li>
-              <a href="./perfil.html">
-                  <li class="nav-item-perfil" id="idProfile">
-                      <span class="bi bi-person nav-icon"></span>
-                  </li>
-              </a>
-          </ul>
+              <div class="nav-item-perfil" id="idProfile"  onclick="toggleProfileOptions()">
+                <li>
+                    <span class="bi bi-person nav-icon"></span>
+                </li>
+              </div>   
+            </ul>
           </div>
       </div>
     </nav>
 
+    <div class="profile-options" id="profileOptions" style="display: none;">
+      <a href="" onclick="login()">Acceder</a>
+      <a href="" onclick="logup()">Registrarse</a>
+    </div>
     <div class="container">
         <div class="banner-container">
           <div class="banner-fondo"></div>

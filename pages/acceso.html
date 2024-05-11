@@ -21,22 +21,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-start">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
-                    <li class="nav-item-search">
+                    <li class="nav-item-search" onclick="toggleSearchInput()">
                         <div class="input-group">
                             <input type="text" class="form-control input-search" id="searchInputGroup" style="display: none;" placeholder="Buscar..." aria-label="Buscar">
-                            <span class="bi bi-search nav-icon" onclick="toggleSearchInput()"></span>
+                            <span class="bi bi-search nav-icon"></span>
                         </div>
                     </li>
-                    <a>
-                        <li class="nav-item-perfil" id="idProfile">
+                    <div class="nav-item-perfil" id="idProfile"  onclick="toggleProfileOptions()">
+                        <li>
                             <span class="bi bi-person nav-icon"></span>
                         </li>
-                    </a>
+                    </div>                
                 </ul>
             </div>
         </div>
     </nav>
-
+    
+    <div class="profile-options" id="profileOptions" style="display: none;">
+        <a href="" onclick="login()">Acceder</a>
+        <a href="" onclick="logup()">Registrarse</a>
+    </div>
     <script src="../script.js"></script>
 </body>
 </html>
