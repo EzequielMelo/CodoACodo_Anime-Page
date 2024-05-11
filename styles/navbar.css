@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(21,31,46);
+    background: linear-gradient(180deg, rgba(21,31,46,1) 45%, rgba(16,0,43,1) 80%);
+  }
+  
+.navbar{
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  padding: 0;
+}
+
+.nav-icons li{
+  padding: .8125rem;
+}
+
+.nav-icon{
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-icons li:hover{
+  background-color: rgb(12, 18, 27);
+  cursor: pointer;
+}
+
+.input-search{
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 1rem;
+  height: 2.05rem;
+}
+
+.profile-options {
+  position: absolute;
+  top: 8.5rem;
+  right: 0;
+  z-index: 2;
+  transform: translateY(-50%); /* Alinea verticalmente en el carrusel */
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.4rem 6rem 2.5rem 0;
+}
+
+.profile-options a {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  user-select: none;
+}
+
+
+

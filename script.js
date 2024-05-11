@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
     const maxLength = 350;
     const descriptions = document.querySelectorAll('.text-limit');
     descriptions.forEach(description => {
@@ -14,4 +14,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
             description.innerHTML = truncatedText;
         }
     });
+});
+
+const searchInputGroup = document.getElementById("searchInputGroup");
+const profileOptions = document.getElementById("profileOptions");
+
+function toggleSearchInput() {
+    
+    if (searchInputGroup.style.display === "none") {
+        searchInputGroup.style.display = "flex";
+        profileOptions.style.display = "none";
+    } else {
+        searchInputGroup.style.display = "none";
+    }
+}
+
+function toggleProfileOptions() {
+
+    if(profileOptions.style.display === "none"){
+        profileOptions.style.display = "block";
+        searchInputGroup.style.display = "none";
+    }else{
+        profileOptions.style.display = "none";
+    }
+}
+
+function login() {
+    console.log("Iniciando sesión...");
+}
+
+function logup() {
+    console.log("Registrarse...");
+}
+
+document.addEventListener("click", function(event) {
+    var profileOptions = document.getElementById("profileOptions");
+    var target = event.target;
+    var isClickInsideProfileOptions = profileOptions.contains(target);
+
+
+    if (!isClickInsideProfileOptions && profileOptions.style.display === "block") {
+        profileOptions.classList.remove("active");
+        console.log(isClickInsideProfileOptions);
+    }
 });
