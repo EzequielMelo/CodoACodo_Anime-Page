@@ -30,15 +30,15 @@ function toggleSearchInput() {
 }
 
 function toggleProfileOptions() {
-
-    if(profileOptions.style.display === "none"){
+    if(profileOptions.style.display === "none")
+    {
         profileOptions.style.display = "block";
         searchInputGroup.style.display = "none";
     }else{
         profileOptions.style.display = "none";
     }
-}
 
+}
 function login() {
     console.log("Iniciando sesión...");
 }
@@ -46,15 +46,3 @@ function login() {
 function logup() {
     console.log("Registrarse...");
 }
-
-document.addEventListener("click", function(event) {
-    var profileOptions = document.getElementById("profileOptions");
-    var target = event.target;
-    var isClickInsideProfileOptions = profileOptions.contains(target);
-
-
-    if (!isClickInsideProfileOptions && profileOptions.style.display === "block") {
-        profileOptions.classList.remove("active");
-        console.log(isClickInsideProfileOptions);
-    }
-});

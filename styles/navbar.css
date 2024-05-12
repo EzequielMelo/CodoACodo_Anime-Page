@@ -32,7 +32,7 @@ body {
 
 .profile-options {
   position: absolute;
-  top: 8.5rem;
+  top: 8.6rem;
   right: 0;
   z-index: 2;
   transform: translateY(-50%); /* Alinea verticalmente en el carrusel */

@@ -21,27 +21,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-start">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
-                    <li class="nav-item-search" onclick="toggleSearchInput()">
+                    <li class="nav-item-search">
                         <div class="input-group">
                             <input type="text" class="form-control input-search" id="searchInputGroup" style="display: none;" placeholder="Buscar..." aria-label="Buscar">
-                            <span class="bi bi-search nav-icon"></span>
+                            <span class="bi bi-search nav-icon" onclick="toggleSearchInput()"></span>
                         </div>
                     </li>
                     <div class="nav-item-perfil" id="idProfile"  onclick="toggleProfileOptions()">
-                        <li>
-                            <span class="bi bi-person nav-icon"></span>
-                        </li>
-                    </div>                
+                        <div class="nav-item-perfil" id="idProfile">
+                            <li>
+                                <span class="bi bi-person nav-icon"></span>
+                            </li>
+                        </div>
+                    </div>
                 </ul>
             </div>
+        </div>
+        <div class="profile-options" id="profileOptions" style="display: none;">
+            <a href="./acceso.html" onclick="login()">Acceder</a>
+            <a href="" onclick="logup()">Registrarse</a>
         </div>
     </nav>
     
     <div id="carouselE1" class="carousel slide carousel-height" data-bs-ride="carousel">
-        <div class="profile-options" id="profileOptions" style="display: none;">
-            <a href="" onclick="login()">Acceder</a>
-            <a href="" onclick="logup()">Registrarse</a>
-        </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselE1" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>

@@ -21,10 +21,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-start">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
-                    <li class="nav-item-search" onclick="toggleSearchInput()">
+                    <li class="nav-item-search">
                         <div class="input-group">
                             <input type="text" class="form-control input-search" id="searchInputGroup" style="display: none;" placeholder="Buscar..." aria-label="Buscar">
-                            <span class="bi bi-search nav-icon"></span>
+                            <span class="bi bi-search nav-icon" onclick="toggleSearchInput()"></span>
                         </div>
                     </li>
                     <div class="nav-item-perfil" id="idProfile"  onclick="toggleProfileOptions()">
@@ -35,12 +35,12 @@
                 </ul>
             </div>
         </div>
+        <div class="profile-options" id="profileOptions" style="display: none;">
+            <a href="" onclick="login()">Acceder</a>
+            <a href="" onclick="logup()">Registrarse</a>
+        </div>
     </nav>
     
-    <div class="profile-options" id="profileOptions" style="display: none;">
-        <a href="" onclick="login()">Acceder</a>
-        <a href="" onclick="logup()">Registrarse</a>
-    </div>
     <script src="../script.js"></script>
 </body>
 </html>
