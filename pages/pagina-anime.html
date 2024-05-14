@@ -8,6 +8,16 @@
         <link rel="stylesheet" href="../styles/estilo-pag-anime.css">
         <link rel="stylesheet" href="../styles/navbar.css">
         <title>Anime project</title>
+        <style>
+          circle{
+            fill: none;
+            stroke: green;
+            stroke-width: 10;
+            stroke-dasharray: var(--porcentaje) 100;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+          }
+        </style>
     </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151f2e; padding: 0;">
@@ -59,7 +69,7 @@
             </div>
           </div>
            <!--descripcion/sinopsis-->
-          <div class="info-container">
+        <div class="info-container">
           <h1 class="titulo-serie">Título de Anime</h1>
           <span>2020</span>
           <h3>Sinopsis</h3>
@@ -74,6 +84,64 @@
                 <li>Duración:</li>
               </ul>
             </div>
+            <div class="episodios-reseñas">
+              <button class="btn-episodios">Episodios</button>
+              <button class="btn-resenas">Reseñas</button>
+            </div>
+
+            <div class="graficos1">
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+            
+              <div class="grafico">
+                <svg width="50" height="50">
+                 <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="graficos2">
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+            
+            
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+
+              <div class="grafico">
+                <svg width="50" height="50">
+                  <circle r="20" cx="50%" cy="50%" />
+                </svg>
+              </div>
+
+            </div>
           </div>
          
           </div>
@@ -82,10 +150,9 @@
       </div>
 
       <div class="container">
-           <div class="episodios-reseñas">
-            <button class="btn-episodios">Episodios</button>
-            <button class="btn-resenas">Reseñas</button></div>
+          
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
 </body>

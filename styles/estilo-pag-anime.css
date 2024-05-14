@@ -134,7 +134,7 @@
 }
 
 
-/*BOTONES EPISODIO- RESEÑA
+/*BOTONES EPISODIO- RESEÑA*/
   .episodios-reseñas {
     display: grid;
     grid-template-columns:  repeat(2, 1fr);
@@ -149,7 +149,7 @@
   .btn-episodios,
   .btn-resenas {
     padding: 10px 20px;
-    background-color: #1b0e3b;
+    background-color: #725689;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -160,5 +160,21 @@
   
   .btn-episodios:hover,
   .btn-resenas:hover {
-    background-color: #0d1421;
-  }*/
+    background-color:#725689;
+  }
+
+.grafico{
+  --porcentaje:30%;
+  width: 50%;
+  display: inline;
+}
+
+.graficos1{
+  margin: 10%;
+  margin-top: 20px;
+}
+
+.graficos2{
+  margin: 10%;
+  margin-top: 20px;
+}
