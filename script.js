@@ -15,34 +15,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-const searchInputGroup = document.getElementById("searchInputGroup");
-const profileOptions = document.getElementById("profileOptions");
-
-function toggleSearchInput() {
-    
-    if (searchInputGroup.style.display === "none") {
-        searchInputGroup.style.display = "flex";
-        profileOptions.style.display = "none";
-    } else {
-        searchInputGroup.style.display = "none";
-    }
-}
-
-function toggleProfileOptions() {
-    if(profileOptions.style.display === "none")
-    {
-        profileOptions.style.display = "block";
-        searchInputGroup.style.display = "none";
-    }else{
-        profileOptions.style.display = "none";
-    }
-
-}
-function login() {
-    console.log("Iniciando sesión...");
-}
-
-function logup() {
-    console.log("Registrarse...");
-}

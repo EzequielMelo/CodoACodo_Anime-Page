@@ -21,25 +21,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-start">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
-                    <li class="nav-item-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control input-search" id="searchInputGroup" style="display: none;" placeholder="Buscar..." aria-label="Buscar">
-                            <span class="bi bi-search nav-icon" onclick="toggleSearchInput()"></span>
+                    <li class="nav-item dropdown">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Buscar...">
+                            <a href="#" class="search_icon"><span class="bi bi-search nav-icon"></span></a>
                         </div>
                     </li>
-                    <div class="nav-item-perfil" id="idProfile"  onclick="toggleProfileOptions()">
-                        <div class="nav-item-perfil" id="idProfile">
-                            <li>
-                                <span class="bi bi-person nav-icon"></span>
-                            </li>
-                        </div>
-                    </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi bi-person nav-icon"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
+                          <li><a class="dropdown-item" href="#">Acceder</a></li>
+                          <li><a class="dropdown-item" href="#">Salir</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
-        </div>
-        <div class="profile-options" id="profileOptions" style="display: none;">
-            <a href="./acceso.html" onclick="login()">Acceder</a>
-            <a href="" onclick="logup()">Registrarse</a>
         </div>
     </nav>
     
@@ -128,7 +126,7 @@
         </div>
     </div>
 
-    <section class="row w-100">
+    <section class="row m-auto">
         <div class="d-flex justify-content-evenly g-4 pe-auto">
             <div class="card text-white bg-transparent" style="width: 18rem;">
                 <img class="card-img-top" src="../assets/frierencard.jpe" alt="Card image cap">
