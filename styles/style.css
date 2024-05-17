@@ -18,6 +18,14 @@
     height: 100%;
 }
 
+.carousel-caption h3 {
+    font-size: 2.4vw;
+}
+
+.carousel-caption p {
+    font-size: 1.2vw;
+}
+
 .carousel-caption h3,
 .carousel-caption p {
     margin: 0;
@@ -36,8 +44,16 @@
     width: 9%;
 }
 
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    padding-top: 1%;
+}
+
 .card {
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;   
+    width: 17rem;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;  
 }
 
 .card-text {
@@ -72,4 +88,24 @@
 
 .content p{
     font-size: 0.9vw;
+}
+
+@media (max-width: 768px)
+{
+    .cards-container {
+        display: inline-grid;
+        grid-template-columns: 33% 33% 33%;
+        justify-content: space-evenly;
+        gap: 1em;
+    }
+
+    .card {
+        width: 90%;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;  
+    }
+
+    .carousel-caption h3,
+    .carousel-caption p {
+    display: none;
+    }
 }
