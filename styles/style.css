@@ -94,14 +94,15 @@
 {
     .cards-container {
         display: inline-grid;
-        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 30% 30% 30%;
         justify-content: space-evenly;
-        gap: 1em;
+        align-items: center;
+        gap: 1%;
     }
 
     .card {
-        width: 90%;
-        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;  
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
 
     .carousel-caption {
