@@ -9,141 +9,150 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../styles/style.css">
   <link rel="stylesheet" href="../styles/navbar.css">
+  <link rel="stylesheet" href="../styles/footer.css">
   <title>Anime project</title>
 </head>
 
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151f2e; padding: 0;">
+      <div class="container">
+        <a href="" class="navbar-brand"><span class="text-danger">
+            <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
+            Anime</span>Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start"
+          aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-start">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
+            <li class="nav-item dropdown">
+              <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Buscar...">
+                <a href="#" class="search_icon"></a><span class="bi bi-search nav-icon"></span></a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="bi bi-person nav-icon"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
+                <li><a class="dropdown-item" href="./acceso.html">Acceder</a></li>
+                <li><a class="dropdown-item" href="#">Salir</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151f2e; padding: 0;">
-    <div class="container">
-      <a href="" class="navbar-brand"><span class="text-danger">
-          <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
-          Anime</span>Project</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start"
-        aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <nav>
+    <div id="carouselE1" class="carousel slide carousel-height" data-bs-ride="carousel">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselE1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <div class="collapse navbar-collapse" id="navbar-start">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
-          <li class="nav-item dropdown">
-            <div class="searchbar">
-              <input class="search_input" type="text" name="" placeholder="Buscar...">
-              <a href="#" class="search_icon"></a><span class="bi bi-search nav-icon"></span></a>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../assets/SoloLeveling.jpg" class="d-block w-100 carousel-img" alt="SoloLeveling">
+          <div class="carousel-caption">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-4">
+                <h3 id="anime-title">Solo Leveling</h3>
+                <p class="text-limit pb-5 pt-3">
+                  <span class="text-secondary">Sub | Dob</span><br>
+                  Lo que no te mata te hace más fuerte, pero en el caso de Sung Jinwoo, lo que lo mató lo hizo más
+                  fuerte.
+                  Después de ser brutalmente asesinado por monstruos en una mazmorra de alto rango, Jinwoo regresó con
+                  el
+                  Sistema, un programa que solo él puede ver y que eleva su nivel en todos los sentidos. Ahora, está
+                  decidido a descubrir los secretos detrás de sus poderes y la mazmorra que los engendró.
+                </p>
+                <button class="btn btn-danger me-2">Comenzar a Ver</button>
+                <button class="btn btn-outline-secondary me-2">
+                  <i class="bi bi-bookmark"></i>
+                </button>
+                <h3 class="pt-5">Mundo Anime</h3>
+                <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
+              </div>
+
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="bi bi-person nav-icon"></span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
-              <li><a class="dropdown-item" href="./acceso.html">Acceder</a></li>
-              <li><a class="dropdown-item" href="#">Salir</a></li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/JujutsuKaisen.jpg" class="d-block w-100 carousel-img" alt="JujutsuKaisen">
+          <div class="carousel-caption">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-4">
+                <h3 id="anime-title">Jujutsu Kaisen</h3>
+                <p class="text-limit pb-5 pt-3">
+                  <span class="text-secondary">Sub | Dob</span><br>
+                  JUJUTSU KAISEN es un manga con historia y dibujo de Gege Akutami que se publica en la Weekly Shonen
+                  Jump. Poco después de su debut se estrenaba la adaptación animada, producida por Studio MAPPA.
+                  Actualmente hay varias temporadas del anime, comenzando con la primera (24 episodios), siguiéndole la
+                  aclamada película precuela JUJUTSU KAISEN 0, y posteriormente la segunda temporada en julio de 2023.
+                  La
+                  serie está disponible subtitulada y doblada.
+                  ¡Sigue al joven Yuji Itadori en esta serie de acción sobrenatural mientras entrena como hechicero y
+                  explora el violento mundo de las maldiciones!
+                  Yuji Itadori se traga un dedo maldito para salvar a alguien de su clase y ahora Ryomen Sukuna, un
+                  poderoso hechicero malvado conocido como el Rey de las Maldiciones, vive en su alma. Las maldiciones
+                  son
+                  seres sobrenaturales creadas a partir de las emociones negativas de los humanos. Esta energía maldita
+                  puede usarse como fuente de poder por parte de los hechiceros y de los espíritus malditos.
+                  Guiado por los hechiceros, Yuji Itadori se une a la Escuela de Bachillerato Técnico de Brujería de
+                  Tokio, una organización que enfrenta a las maldiciones. Con la ayuda de su maestro, Satoru Gojo,
+                  Itadori
+                  hace amistad con Megumi Fushiguro y Nobara Kugisaki, ambos estudiantes de primer año como él.
+                </p>
+                <button class="btn btn-danger me-2">Comenzar a Ver</button>
+                <button class="btn btn-outline-secondary me-2">
+                  <i class="bi bi-bookmark"></i>
+                </button>
+                <h3 class="pt-5">Mundo Anime</h3>
+                <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/arcane-lol.jpg" class="d-block w-100 carousel-img" alt="Arcane">
+          <div class="carousel-caption">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-4">
+                <h3 id="anime-title">Arcane</h3>
+                <p class="text-limit pb-5 pt-3">
+                  <span class="text-secondary">Sub | Dob</span><br>
+                  Arcane es una serie animada que se desarrolla en el universo de "League of Legends". La trama sigue a
+                  dos hermanas, Vi y Powder, mientras enfrentan desafíos en la ciudad de Piltover y la peligrosa Zaun.
+                  La
+                  serie explora temas de magia, tecnología y relaciones personales en un entorno distópico.
+                </p>
+                <button class="btn btn-danger me-2">Comenzar a Ver</button>
+                <button class="btn btn-outline-secondary me-2">
+                  <i class="bi bi-bookmark"></i>
+                </button>
+                <h3 class="pt-5">Mundo Anime</h3>
+                <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselE1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
-
-  <div id="carouselE1" class="carousel slide carousel-height" data-bs-ride="carousel">
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselE1" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../assets/SoloLeveling.jpg" class="d-block w-100 carousel-img" alt="SoloLeveling">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-4">
-              <h3 id="anime-title">Solo Leveling</h3>
-              <p class="text-limit pb-5 pt-3">
-                <span class="text-secondary">Sub | Dob</span><br>
-                Lo que no te mata te hace más fuerte, pero en el caso de Sung Jinwoo, lo que lo mató lo hizo más fuerte.
-                Después de ser brutalmente asesinado por monstruos en una mazmorra de alto rango, Jinwoo regresó con el
-                Sistema, un programa que solo él puede ver y que eleva su nivel en todos los sentidos. Ahora, está
-                decidido a descubrir los secretos detrás de sus poderes y la mazmorra que los engendró.
-              </p>
-              <button class="btn btn-danger me-2">Comenzar a Ver</button>
-              <button class="btn btn-outline-secondary me-2">
-                <i class="bi bi-bookmark"></i>
-              </button>
-              <h3 class="pt-5">Mundo Anime</h3>
-              <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/JujutsuKaisen.jpg" class="d-block w-100 carousel-img" alt="JujutsuKaisen">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-4">
-              <h3 id="anime-title">Jujutsu Kaisen</h3>
-              <p class="text-limit pb-5 pt-3">
-                <span class="text-secondary">Sub | Dob</span><br>
-                JUJUTSU KAISEN es un manga con historia y dibujo de Gege Akutami que se publica en la Weekly Shonen
-                Jump. Poco después de su debut se estrenaba la adaptación animada, producida por Studio MAPPA.
-                Actualmente hay varias temporadas del anime, comenzando con la primera (24 episodios), siguiéndole la
-                aclamada película precuela JUJUTSU KAISEN 0, y posteriormente la segunda temporada en julio de 2023. La
-                serie está disponible subtitulada y doblada.
-                ¡Sigue al joven Yuji Itadori en esta serie de acción sobrenatural mientras entrena como hechicero y
-                explora el violento mundo de las maldiciones!
-                Yuji Itadori se traga un dedo maldito para salvar a alguien de su clase y ahora Ryomen Sukuna, un
-                poderoso hechicero malvado conocido como el Rey de las Maldiciones, vive en su alma. Las maldiciones son
-                seres sobrenaturales creadas a partir de las emociones negativas de los humanos. Esta energía maldita
-                puede usarse como fuente de poder por parte de los hechiceros y de los espíritus malditos.
-                Guiado por los hechiceros, Yuji Itadori se une a la Escuela de Bachillerato Técnico de Brujería de
-                Tokio, una organización que enfrenta a las maldiciones. Con la ayuda de su maestro, Satoru Gojo, Itadori
-                hace amistad con Megumi Fushiguro y Nobara Kugisaki, ambos estudiantes de primer año como él.
-              </p>
-              <button class="btn btn-danger me-2">Comenzar a Ver</button>
-              <button class="btn btn-outline-secondary me-2">
-                <i class="bi bi-bookmark"></i>
-              </button>
-              <h3 class="pt-5">Mundo Anime</h3>
-              <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/arcane-lol.jpg" class="d-block w-100 carousel-img" alt="Arcane">
-        <div class="carousel-caption">
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-4">
-              <h3 id="anime-title">Arcane</h3>
-              <p class="text-limit pb-5 pt-3">
-                <span class="text-secondary">Sub | Dob</span><br>
-                Arcane es una serie animada que se desarrolla en el universo de "League of Legends". La trama sigue a
-                dos hermanas, Vi y Powder, mientras enfrentan desafíos en la ciudad de Piltover y la peligrosa Zaun. La
-                serie explora temas de magia, tecnología y relaciones personales en un entorno distópico.
-              </p>
-              <button class="btn btn-danger me-2">Comenzar a Ver</button>
-              <button class="btn btn-outline-secondary me-2">
-                <i class="bi bi-bookmark"></i>
-              </button>
-              <h3 class="pt-5">Mundo Anime</h3>
-              <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-1">
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselE1" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <section class="card-section-containter row m-auto">
     <div class="cards-container">
@@ -298,6 +307,14 @@
       </div>
     </div>
   </section>
+
+  <footer>
+    <div class="footer-container">
+      <h3>© Anime-project 2024</h3>
+      <p>Grupo 11 codo a codo - copyright all rights reserved</p>
+      <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
