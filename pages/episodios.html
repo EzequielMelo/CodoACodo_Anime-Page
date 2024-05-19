@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/estilo-pag-anime.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151f2e; padding: 0;">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand"><span class="text-danger">
+                    <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
+                    Anime</span>Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start"
+                aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-start">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
+                    <li class="nav-item dropdown">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Buscar...">
+                            <a href="#" class="search_icon"><span class="bi bi-search nav-icon"></span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi bi-person nav-icon"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
+                            <li><a class="dropdown-item" href="./acceso.html">Acceder</a></li>
+                            <li><a class="dropdown-item" href="#">Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="banner-container">
+            <div class="banner-fondo"></div>
+        </div>
+        <!--portada y botones para puntuar-->
+        <div class="content-container">
+            <div class="cover-container">
+                <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-bbBWj4pEFseh.jpg"
+                    alt="portada-anime" class="portada-anime">
+                <div class="button-container">
+                    <button class="btn-favorite">Agregar a favoritos <i class="bi bi-heart"></i></button>
+                    <br><button class="btn-puntuar">Puntuar <i class="bi bi-hand-thumbs-up"></i></button>
+                </div>
+            </div>
+        
+         <div class="info-container">
+            <select name="select">
+                <option value="value1">Temporada 1</option>
+                <option value="value2" selected>Temporada 2</option>
+              </select>
+
+            <div class="lista-reseñas-episodios">
+                <ol>
+                  <ul><img src="https://serializd-tmdb-images.b-cdn.net/t/p/w500/k3LNFvoLJidIinXkvmahCpShL12.jpg"
+                      style="width: 90px; height: 140px" alt="">Temporada 1</ul>
+                  <hr>
+                  <ul><img src="https://serializd-tmdb-images.b-cdn.net/t/p/w500/k3LNFvoLJidIinXkvmahCpShL12.jpg"
+                      style="width: 90px; height: 140px" alt="">Temporada 2</ul>
+                </ol>
+              </div>
+        
+            </div>
+         </div>
+            
+        </body>
+
+</html>
