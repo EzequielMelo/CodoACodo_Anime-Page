@@ -157,7 +157,7 @@
   grid-template-columns: 80% 10%;
   grid-template-rows: 100%;
   gap: 10%;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .detalle-comentario-serie{
@@ -169,9 +169,9 @@
 }
 
 .foto-usuario{
-  margin-top: 60px;
+  margin-top: 30px;
 }
 .foto-usuario-forma{
-  width: 100%;
+  width: 50%;
   border-radius: 50%;
 }
