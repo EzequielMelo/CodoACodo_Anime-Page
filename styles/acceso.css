@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Mukta Malar", sans-serif;
+    box-sizing: border-box;
+}
+
+.container-form{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content{
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 30px 60px 30px;
+    text-align: center;
+    border-radius: 25px;
+    position: relative;
+}
+
+.form-content h1{
+    color: white;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.form-content h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #d13d49;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field{
+    display: flex;
+    align-items: center;
+    background-color: #515966;
+    margin: 15px 0;
+    border-radius: 3px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color: #d13d49; 
+}
+
+.grupo-input input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    padding: 10px 7px;
+    color: white;
+}
+
+.grupo-input input::placeholder{
+    color: white;
+}
+
+.forgot-pass{
+    color: #515966;
+    font-size: 0.7rem;
+    text-align: left;
+    display: block;
+}
+
+.link-text{
+    color: #d13d49;
+    margin-left: 10px;
+}
+.link-text:hover,
+.forgot-pass:hover{
+    color: white !important;
+    cursor: pointer;
+}
+
+.btn-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-field button{
+    margin: 30px 0 10px 0;
+}
+
+.account-text{
+    display: inline;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.gato-img {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: -28px;
+    right: -24px;
+}
+
+@media (max-width: 650px){
+    .gato-img{
+        display: none;
+    }
+    .btn-field button{
+        font-size: 0.9rem;
+    }
+}

@@ -9,7 +9,7 @@ body {
 }
 
 .nav-icons li{
-  padding: .7rem;
+  padding: 0.7rem;
   margin-bottom: auto;
   margin-top: auto;
 }
@@ -28,7 +28,6 @@ body {
 }
 
 .dropdown-menu li:hover{
-  color: white;
   background-color: transparent;
   cursor: pointer;
   margin-bottom: auto;
@@ -57,28 +56,26 @@ body {
 }
 
 
-/* Webkit-based browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra de desplazamiento */
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #151f2e; /* Color de la barra de desplazamiento */
-  border-radius: 10px; /* Bordes redondeados */
+  background-color: #151f2e;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color de la pista de desplazamiento */
-  border-radius: 10px; /* Bordes redondeados de la pista */
+  background: #f1f1f1;
+  border-radius: 10px;
 }
 
 /* Firefox */
 html {
-  scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
-  scrollbar-color: #151f2e #f1f1f1; /* Color de la barra de desplazamiento y de la pista */
+  scrollbar-width: thin;
+  scrollbar-color: #151f2e #f1f1f1;
 }
 
-/* Experimental approach for border-radius in Firefox */
 ::-moz-scrollbar-thumb {
   background-color: #151f2e;
   border-radius: 10px;
