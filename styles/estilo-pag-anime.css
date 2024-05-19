@@ -3,33 +3,34 @@
   height: 450px;
   overflow: hidden;
   padding: 20px 0;
-  margin: -20px 0 20px;
+  margin: -10px 0 20px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  
 }
  
 .banner-fondo {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 350px;
+  height: 300px;
   background-size: cover;
   background-position: center;
   filter: blur(6px);
-  z-index: -5;
+  z-index: -50 !important;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.801), transparent), url('https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-bbBWj4pEFseh.jpg');
 }
   
 
-.banner-contenido{
+/* .banner-contenido{
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff; 
-  z-index: 1;
-}
+  z-index: -5;
+} */
 
 .titulo-serie{
   font-size: 2.2rem;
@@ -57,10 +58,10 @@
   width: 320px;
 }
 
-.container {
+/* .container {
   position: relative;
    
-}
+} */
   
 .banner-container {
   position: relative;
@@ -73,7 +74,7 @@
   z-index: 2;
   display: flex;
   align-items: flex-start;
-  margin-top: -30px;
+  margin-top: 10rem;
 }
   
 .cover-container {
@@ -86,8 +87,10 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin-top: 55px;
+  margin-top: 10rem;
   color: white;
+  flex: 1;
+  z-index: 100;
 }
   
 .titulo-serie {
@@ -141,7 +144,7 @@
     justify-content: left;
     margin-top: 1rem;
    float: left;
-    width: 844px;
+    width: 100%;
     height: 80px;
     align-items: center;
   }
@@ -158,9 +161,15 @@
     margin: 0 10px;
   }
   
+.btn-episodios a,
+.btn-resenas a{
+  color: white;
+  text-decoration: none;
+}
+
   .btn-episodios:hover,
   .btn-resenas:hover {
-    background-color:#725689;
+    background-color:#3e1e50;
   }
 
 .grafico{
@@ -178,3 +187,106 @@
   margin: 10%;
   margin-top: 20px;
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*Responsive*/
+
+@media (max-width: 320px) {
+  .portada-anime {
+    width: 100%;
+    height: auto;
+  }
+
+  .episodios-reseñas {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-serie {
+    font-size: 1.5rem;
+  }
+
+  .info-container{
+    width: 100%;
+    top: 50px !important;
+  }
+  .btn-episodios,
+  .btn-resenas {
+    width: 100% !important;  
+    margin-bottom: 1.5rem;
+  }
+
+
+  .video-container{
+    width: 1rem;
+  }
+  .graficos1{
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .btn-favorite,
+.btn-puntuar {
+  width: 330px;}
+
+.video-container iframe{
+    width: 100%;
+  }
+  .info-container{
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .portada-anime {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-container {
+  margin-top: 10rem;
+  margin-left: 1rem;
+  }
+
+  .episodios-reseñas {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-serie {
+    font-size: 1.5rem;
+  }
+  .info-container{
+    width: 100%;
+  }
+  .btn-episodios,
+  .btn-resenas {
+    width: 100%;
+   margin: 0.4rem;
+  }
+
+  .video-container{
+    width: 100%;
+  }
+  .graficos1{
+    margin-top: 10rem;
+  }
+}
+
+
+
