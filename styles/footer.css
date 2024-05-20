@@ -50,10 +50,13 @@ footer {
 }
 
 footer #collaborator {
-    margin: 0px;
     align-items: end;
     justify-content: center;
     text-align:center;
     color: #515966;
     font-size: 0.85rem;
+}
+
+footer #collaborator p {
+    margin: 0;
 }
