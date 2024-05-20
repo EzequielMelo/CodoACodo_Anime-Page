@@ -1,6 +1,6 @@
 .footer-container{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    background: linear-gradient(180deg, rgba(16, 0, 43, 1); 20%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(16, 0, 43, 1) 0%, rgba(0, 0, 0, 0.6) 100%);
     padding: 0;
     width: 100%;
     height: auto;
@@ -32,6 +32,15 @@
     font-size: 0.85em;
     margin-right: 1rem;
     margin-top: 12%;
+}
+
+#footer-logo a{
+    text-decoration: none;
+    color: white;
+}
+
+#footer-logo a:hover{
+    color: #d13d49;
 }
 
 #cat-icon {

@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 3rem 0;
 }
 
 .form-content{
@@ -79,7 +80,9 @@
 .link-text{
     color: #d13d49;
     margin-left: 10px;
+    text-decoration: none;
 }
+
 .link-text:hover,
 .forgot-pass:hover{
     color: white !important;
@@ -110,11 +113,51 @@
     right: -24px;
 }
 
-@media (max-width: 650px){
+@media (max-width: 665px){
     .gato-img{
         display: none;
     }
     .btn-field button{
         font-size: 0.9rem;
     }
+}
+
+
+/* Form contact */
+
+.styled-select{
+    display: flex;
+    justify-content: start;
+    width: 200px;
+    padding: 3px 5px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-select:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.checkbox-field{
+    display: flex;
+    color: white;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.checkbox-field label{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.checkbox-field input {
+    margin-right: 1rem;
 }
