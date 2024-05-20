@@ -25,36 +25,39 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151f2e; padding: 0;">
-    <div class="container">
-      <a href="./index.html" class="navbar-brand"><span class="text-danger">
-          <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
-          Anime</span>Project</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start"
-        aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-start">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
-          <li class="nav-item dropdown">
-            <div class="searchbar">
-              <input class="search_input" type="text" name="" placeholder="Buscar...">
-              <a href="#" class="search_icon"><span class="bi bi-search nav-icon"></span></a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="bi bi-person nav-icon"></span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
-              <li><a class="dropdown-item" href="./acceso.html">Acceder</a></li>
-              <li><a class="dropdown-item" href="#">Salir</a></li>
-            </ul>
-          </li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #151f2e; padding: 0;">
+      <div class="container">
+        <a href="./index.html" class="navbar-brand"><span class="text-danger">
+            <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
+            Anime</span>Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start"
+          aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-start">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
+            <li class="nav-item dropdown">
+              <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Buscar...">
+                <a href="#" class="search_icon"></a><span class="bi bi-search nav-icon"></span></a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="bi bi-person nav-icon"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
+                <li><a class="dropdown-item" href="./acceso.html">Acceder</a></li>
+                <li><a class="dropdown-item" href="#">Salir</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
+
   <div class="container">
 
 
@@ -73,8 +76,7 @@
               <div class="button-container">
                 <button class="btn-favorite">Agregar a favoritos <i class="bi bi-heart"></i></button>
                 <br><button class="btn-puntuar">Puntuar <i class="bi bi-hand-thumbs-up"></i></button>
-                <h5 style="color: white;">Trailer</h5>
-                <div class="video-container">
+                <div class="video-container mt-4">
 
                   <iframe width="235" height="215" src="https://www.youtube.com/embed/aPBUUJbrAWo?si=QKX1HZRFZI2V-tsB"
                     title="YouTube video player" frameborder="0"
@@ -83,118 +85,117 @@
                 </div>
               </div>
             </div>
+            <!--descripcion/sinopsis-->
+            <div class="col-md-8 col-lg-8 col-xl-8">
+              <div class="info-container">
+                <h1 class="titulo-serie">Título de Anime</h1>
+                <span>2020</span>
+                <h3>Sinopsis</h3>
+                <p class="sinopsis">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut dolorem fuga libero maxime voluptatum.
+                  Aliquid
+                  sapiente libero, commodi architecto facilis, quae recusandae aperiam nemo est, rerum ea quaerat animi
+                  at!
+                </p>
+                <div class="info-general-anime">
+                  <p>Información adicional:</p>
+                  <ul>
+                    <li>Género: </li>
+                    <li>Año: </li>
+                    <li>Duración:</li>
+                  </ul>
+                </div>
+                <div class="episodios-reseñas">
+                  <a href="episodios.html"><button class="btn-episodios">Episodios</button></a>
+                  <a href="resenas.html"><button class="btn-resenas">Reseñas</button></a>
+                </div>
+
+                <div class="graficos1">
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="graficos2">
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+                  <div class="grafico">
+                    <svg width="50" height="50">
+                      <circle r="20" cx="50%" cy="50%" />
+                    </svg>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
-      <!--descripcion/sinopsis-->
-      <div class="col-md-8 col-lg-8 col-xl-8">
-        <div class="info-container">
-          <h1 class="titulo-serie">Título de Anime</h1>
-          <span>2020</span>
-          <h3>Sinopsis</h3>
-          <p class="sinopsis">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut dolorem fuga libero maxime voluptatum. Aliquid
-            sapiente libero, commodi architecto facilis, quae recusandae aperiam nemo est, rerum ea quaerat animi at!
-          </p>
-          <div class="info-general-anime">
-            <p>Información adicional:</p>
-            <ul>
-              <li>Género: </li>
-              <li>Año: </li>
-              <li>Duración:</li>
-            </ul>
+
+      <div class="container">
+
+      </div>
+
+      <footer>
+        <div class="footer-container">
+          <div id="footer-copyright">
+            <h3>© Anime-project 2024</h3>
+            <p>Grupo 11 codo a codo - Copyright all rights reserved</p>
           </div>
-          <div class="episodios-reseñas">
-            <button class="btn-episodios"><a href="episodios.html">Episodios</a></button>
-            <button class="btn-resenas"><a href="resenas.html">Reseñas</a></button>
-          </div>
-
-          <div class="graficos1">
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-          </div>
-
-          <div class="graficos2">
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
-
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
-            <div class="grafico">
-              <svg width="50" height="50">
-                <circle r="20" cx="50%" cy="50%" />
-              </svg>
-            </div>
-
+          <div id="footer-logo">
+            <p><a href="./empleo.html">Empleos</a></p>
+            <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
+            <img id="cat-icon" src="../assets/catlogo.png" alt="Icon anime project" width="65px" height="auto">
           </div>
         </div>
+        <div id="collaborator">
+          <p>Repositorio</p>
+          <p>Colaboradores: NahirsaMartinez - Lilithgreen - JpCortezF - EzequielMelo</p>
+        </div>
+      </footer>
 
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <div class="container">
-
-  </div>
-
-  <footer>
-    <div class="footer-container">
-      <div id="footer-copyright">
-        <h3>© Anime-project 2024</h3>
-        <p>Grupo 11 codo a codo - Copyright all rights reserved</p>
-      </div>
-      <div id="footer-logo">
-        <p><a href="./empleo.html">Empleos</a></p>
-        <img src="../assets/letter-a-icon.png" alt="Icon anime project" width="35px" height="auto">
-        <img id="cat-icon" src="../assets/catlogo.png" alt="Icon anime project" width="65px" height="auto">
-      </div>
-    </div>
-    <div id="collaborator">
-      <p>Repositorio</p>
-      <p>Colaboradores: NahirsaMartinez - Lilithgreen - JpCortezF - EzequielMelo</p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="../script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+      <script src="../script.js"></script>
 </body>
 
 </html>
