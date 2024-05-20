@@ -159,5 +159,12 @@
 }
 
 .checkbox-field input {
+    display: column;
     margin-right: 1rem;
+}
+
+label.error {
+    color: white;
+    font-size: 0.7em;
+    margin-right: 2px;
 }
