@@ -22,15 +22,15 @@
 }
   
 
-/* .banner-contenido{
+.banner-contenido{
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff; 
-  z-index: -5;
-} */
+  z-index: 1;
+}
 
 .titulo-serie{
   font-size: 2.2rem;
@@ -39,6 +39,7 @@
   color: black;
   font-weight: 00;
 }
+
 .portada-anime{
   position: relative;
   margin-left: 0.4rem;
@@ -150,27 +151,27 @@
   }
   
   .btn-episodios,
-  .btn-resenas {
-    padding: 10px 20px;
+  .btn-resenas{
+    width: 100%;
+    padding: 10px 0;
     background-color: #725689;
     color: #fff;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    margin: 0 10px;
   }
   
-.btn-episodios a,
-.btn-resenas a{
+  .episodios-reseñas a{
   color: white;
   text-decoration: none;
+  margin-right: 0.8rem;
 }
 
-  .btn-episodios:hover,
-  .btn-resenas:hover {
-    background-color:#3e1e50;
-  }
+.btn-episodios:hover,
+.btn-resenas:hover {
+  background-color:#3e1e50;
+}
 
 .grafico{
   --porcentaje:30%;
