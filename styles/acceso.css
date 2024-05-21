@@ -154,12 +154,11 @@
 
 .checkbox-field label{
     display: flex;
-    width: 100%;
     align-items: center;
+    margin-right: 5.5rem;
 }
 
 .checkbox-field input {
-    display: column;
     margin-right: 1rem;
 }
 
@@ -167,4 +166,21 @@ label.error {
     color: white;
     font-size: 0.7em;
     margin-right: 2px;
+}
+
+.btn-field{
+    display: block;
+    left: 100;
+}
+
+.checkbox-field p{
+    display: flex;
+    text-align: left;
+    margin: 0;
+}
+
+@media (max-width: 400px){
+    .checkbox-field p{
+        font-size: 0.9em;
+    } 
 }

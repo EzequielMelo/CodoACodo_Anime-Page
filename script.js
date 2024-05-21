@@ -73,12 +73,19 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             terminos: {
                 required: true,
-                maxlength: 1
+            }
+        },
+        errorPlacement: function(error, element) {
+            if (element.attr("name") == "terminos") {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
             }
         }
     });
 
-    $(".btn-aplicar").click(function(){
+    $(".btn-aplicar").click(function(event){
+        event.preventDefault();
         if($("#form1").valid() == false)
         {
             return;
@@ -88,6 +95,17 @@ document.addEventListener("DOMContentLoaded", function() {
         let apellido = $("#apellido").val();
         let telefono =$("#telefono").val();
         let pais = $("#pais").val();
+        let terminos = $("#checkId").val();
+        Swal.fire({
+            title: '¡Aplicación Enviada!',
+            text: 'Tu aplicación de empleo fue enviada correctamente.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "../index.html";
+            }
+        });
     });
 
     jQuery.extend(jQuery.validator.messages, {

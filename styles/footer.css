@@ -60,3 +60,12 @@ footer #collaborator {
 footer #collaborator p {
     margin: 0;
 }
+
+footer #collaborator a {
+    text-decoration: none;
+    color: #515966;
+}
+
+footer #collaborator a:hover{
+    color: #d13d49;
+}

@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
   <link rel="stylesheet" href="../styles/navbar.css">
   <link rel="stylesheet" href="../styles/acceso.css">
@@ -92,8 +93,10 @@
         </div>
         <div class="checkbox-field">
           <label>
-            <input type="checkbox" name="terminos" value="">Acepto los términos y condiciones
+            <input type="checkbox" name="terminos" id="checkId"><p>Acepto los términos y condiciones</p>
           </label>
+        </div>
+        <div class="btn-field">
           <button class="btn btn-danger btn-aplicar" type="submit">Aplicar</button>
         </div>
       </form>
@@ -113,7 +116,7 @@
       </div>
     </div>
     <div id="collaborator">
-      <p>Repositorio</p>
+      <a href="https://github.com/EzequielMelo/CodoACodo_Anime-Page" target="_blank"><p>Repositorio</p></a>
       <p>Colaboradores: NahirsaMartinez - Lilithgreen - JpCortezF - EzequielMelo</p>
     </div>
   </footer>
@@ -126,6 +129,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../script.js"></script>
 </body>
 
