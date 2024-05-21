@@ -32,7 +32,7 @@
     padding: 0;
 }
 
-#anime-title{
+.anime-title{
     margin-top: 5%;
 }
 
@@ -82,7 +82,7 @@
     opacity: 1;
 }
 
-.content h1{
+.content h3{
     font-size: 1.15em;
     padding-bottom: 4%;
 }
@@ -132,7 +132,7 @@
         justify-content: end;
     }
 
-    #anime-title {
+    .anime-title {
         display: flex;
         width: 200px;
         align-items: center;
@@ -166,7 +166,7 @@
         padding-bottom: 4%;
     }
 
-    #anime-title {
+    .anime-title {
         display: flex;
         width: 200px;
         align-items: center;
