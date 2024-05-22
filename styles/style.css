@@ -132,7 +132,7 @@
         justify-content: end;
     }
 
-    .anime-title {
+    .carousel-caption .anime-title {
         display: flex;
         width: 200px;
         align-items: center;
