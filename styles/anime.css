@@ -1,0 +1,129 @@
+
+.banner-container {
+    position: relative;
+}
+
+.banner-fondo {
+    display: absolute;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.801), transparent), url('https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-bbBWj4pEFseh.jpg');
+}
+
+.sidebar-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 450px;
+    margin-right: 1rem;
+    margin-top: -130px;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anime-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+}
+
+.anime-img {
+    margin-bottom: 1.5rem;
+}
+
+.anime-img img{
+    position: relative;
+    top: -30%;
+    left: auto;
+    width: 230px;
+    height: 350px;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.button-container {
+    position: relative;
+    top: -30%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container button {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.info-container {
+    background-color: #1b0e3b;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-container h2 span{
+    font-size: 0.5em;
+}
+
+.info-container p,
+.info-container ul {
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px){
+
+    .main-container{
+        margin-top: -130px;
+    }
+
+    .anime-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #00000026;
+      border: 3px solid rgba(191, 191, 191, 0.174);
+    }
+
+    .anime-img{
+        display: flex;
+        justify-content: center;
+    }
+
+    .anime-img img {
+        width: 230px;
+        height: 350px;
+        
+    }
+    
+    .sidebar-content {
+      order: -1;
+      width: 90%;
+      margin: 0 0 2rem 0;
+    }
+    
+    .sidebar-content button{
+        width: 60%;
+    }
+    .button-container{
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px){
+    .anime-content img {
+        width: 180px;
+        height: 270px;
+    }
+}
