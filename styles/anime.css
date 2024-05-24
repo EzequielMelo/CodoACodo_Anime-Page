@@ -33,7 +33,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 60%;
+    width: 80%;
 }
 
 .anime-img {
@@ -161,13 +161,35 @@
     box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
+.comment-group {
+    display: flex;
+    align-items: flex-start;
+}
+
+.user-photo {
+    display: block;
+    flex-shrink: 0;
+    margin-right: 10px; /* Espacio entre la foto y el comentario */
+}
+
+.user-photo img{
+    display: block;
+    width: 46px;
+    height: 46px;
+    border-radius: 50px;
+}
+
+.user-comment {
+    flex-grow: 1; /* Permite que el comentario ocupe el resto del espacio */
+}
+
 @media (max-width: 1200px){
 
     .anime-content{
         display: flex;
         justify-content: center;
         position: relative;
-        width: 65%;
+        width: 85%;
     }
 
     .info h2{
@@ -216,7 +238,7 @@
         display: flex;
         justify-content: center;
         position: relative;
-        width: 70%;
+        width: 90%;
     }
 
     .info h2 span{
@@ -249,7 +271,7 @@
         display: flex;
         justify-content: center;
         position: relative;
-        width: 80%;
+        width: 95%;
     }
 
     .styled-select{
@@ -321,5 +343,22 @@
     .anime-content img {
         width: 180px;
         height: 270px;
+    }
+    .sidebar-content button{
+        font-size: 0.78em;
+    }
+}
+
+@media (max-width: 420px){
+    .episodes-container a > img{
+        width: 130px;
+        height: auto;
+    }
+}
+
+@media (max-width: 340px){
+    .episodes-container a > img{
+        width: 100px;
+        height: auto;
     }
 }
