@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const LogUp= document.getElementById("LogUp");
     const LogIn = document.getElementById("LogIn");
     const forgotID = document.getElementById("forgotID");
+
     const maxLength = 350;
     const descriptions = document.querySelectorAll('.text-limit');
     descriptions.forEach(description => {
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             description.innerHTML = truncatedText;
         }
     });
+    
     if (LogIn) {
         LogIn.onclick = function(){
             userInput.style.maxHeight = "0";
