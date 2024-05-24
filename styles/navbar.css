@@ -89,3 +89,11 @@ html {
   background: #f1f1f1;
   border-radius: 10px;
 }
+
+@media (max-width: 990px){
+  .searchbar:hover > .search_input{
+    width: 90%;;
+    caret-color:red;
+    transition: width 0.4s linear;
+  }
+}
