@@ -33,7 +33,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 80%;
+    width: 60%;
 }
 
 .anime-img {
@@ -45,7 +45,8 @@
     top: -30%;
     left: auto;
     width: 230px;
-    height: 350px;
+    height:auto;
+    object-fit: cover;
     border-radius: 3px;
     z-index: 10;
 }
@@ -83,7 +84,7 @@
 
 .info-container p,
 .info-container ul {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .chapters-container {
@@ -120,17 +121,16 @@
 }
 
 .episodes-container a > img{
-    width: 150px;
-    height: auto;
+    object-fit: cover;
 }
 
 .episodes-container h4{
-    font-size: 1em;
+    font-size: 1.2em;
     color: #d13d49;
 }
 
 .episodes-container p{
-    font-size: 0.7em;
+    font-size: 0.85em;
     margin: 0;
 }
 
@@ -161,27 +161,81 @@
     box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
-.comment-group {
+.comments-container {
+    background-color: #1b0e3b;
+    padding: 20px;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.user-photo {
-    display: block;
-    flex-shrink: 0;
-    margin-right: 10px; /* Espacio entre la foto y el comentario */
+.comments-container  h5{
+    width: 100%;
+    text-align: left;
 }
 
-.user-photo img{
-    display: block;
+.comment-area{
+    display: grid;
+    grid-template-columns: [col] 55px [col] 1fr [col] 0.3fr;
+    grid-template-rows: repeat(2, 1fr);
+    border: 2px solid rgba(191, 191, 191, 0.174);
+    border-radius: 3px;
+    width: 100%;
+    padding: 10px;
+}
+
+.comment-area img{
+    grid-column: col / span 3;
+    grid-row: row ;
     width: 46px;
     height: 46px;
     border-radius: 50px;
 }
 
-.user-comment {
-    flex-grow: 1; /* Permite que el comentario ocupe el resto del espacio */
+.comment-area textarea{
+    grid-column: col 2 / span 3 ;
+    grid-row: row ;
+    resize: none;
+    font-size: 1em;
+    border-radius: 3px;
+    height: 100px;
+    padding: 8px;
 }
+
+.comment-button{
+    grid-row: row 2 ;
+    grid-column: col 3 / span 1 ;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-button button {
+    margin-top: 0.3rem;
+    font-size: 0.8em;
+}
+
+.comment-group {
+    display: flex;
+    width: 90%;
+    margin-top: 1rem;
+}
+
+
+.user-photo {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.user-photo img{
+    width: 46px;
+    height: 46px;
+    border-radius: 50px;
+}
+
 
 @media (max-width: 1200px){
 
@@ -212,8 +266,7 @@
     }
 
     .episodes-container a > img{
-        width: 140px;
-        height: 90px;
+        object-fit: cover;
     }
 
     .episodes-container h4{
@@ -255,8 +308,7 @@
     }
 
     .episodes-container a > img{
-        width: 120px;
-        height: 90px;
+        object-fit: cover;
     }
 
     .episode-info h4{
@@ -279,8 +331,7 @@
     }
 
     .episodes-container a > img{
-        width: 100px;
-        height: 90px;
+        object-fit: cover;
     } 
 }
 @media (max-width: 768px){
@@ -306,8 +357,8 @@
 
     .anime-img img {
         width: 230px;
-        height: 350px;
-        
+        height:auto;
+        object-fit: cover;
     }
     
     .sidebar-content {
@@ -324,8 +375,7 @@
     }
 
     .episodes-container a > img{
-        width: auto;
-        height: auto;
+        object-fit: cover;
     }
 
     .episode-info h4{
@@ -342,23 +392,62 @@
 @media (max-width: 576px){
     .anime-content img {
         width: 180px;
-        height: 270px;
+        height:auto;
+        object-fit: cover;
     }
     .sidebar-content button{
         font-size: 0.78em;
+    }
+
+    .episodes-container a > img{
+        max-width: 40%;
+        height:auto;
+        object-fit: cover;
+    }
+
+    .comment-area img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .user-photo img{
+        width: 46px;
+        height: 46px;
     }
 }
 
 @media (max-width: 420px){
     .episodes-container a > img{
-        width: 130px;
-        height: auto;
+        max-width: 40%;
+        height:auto;
+        object-fit: cover;
+    }
+
+    .comment-area img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .user-photo img{
+        width: 46px;
+        height: 46px;
     }
 }
 
 @media (max-width: 340px){
     .episodes-container a > img{
-        width: 100px;
-        height: auto;
+        max-width: 40%;
+        height:auto;
+        object-fit: cover;
+    }
+
+    .comment-area img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .user-photo img{
+        width: 46px;
+        height: 46px;
     }
 }
