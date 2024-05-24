@@ -87,6 +87,30 @@
     font-size: 1em;
 }
 
+.info-container ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-anime-video{
+    display: flex;
+    height: auto;
+}
+
+.info-aditional{
+    width: 40%;
+}
+
+.video-container{
+    width: 60%;
+}
+
+.video-container iframe{
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+}
+
 .chapters-container {
     background-color: #1b0e3b;
     padding: 20px;
@@ -238,6 +262,15 @@
 }
 
 
+
+@media (max-width: 1400px){
+    .anime-content{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 80%;
+    }
+}
 @media (max-width: 1200px){
 
     .anime-content{
@@ -257,7 +290,7 @@
 
     .info p,
     .info ul{
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 
     .styled-select{
@@ -266,16 +299,12 @@
         padding: 1.5px 3.5px;
     }
 
-    .episodes-container a > img{
-        object-fit: cover;
-    }
-
     .episodes-container h4{
         font-size: 0.8em;
     }
     
     .episodes-container p{
-        font-size: 0.6em;
+        font-size: 0.8em;
         overflow: hidden;
         text-overflow: ellipsis;
         margin: 0;
@@ -287,6 +316,7 @@
 }
 
 @media (max-width: 1000px){
+
 
     .anime-content{
         display: flex;
@@ -301,15 +331,28 @@
 
     .info p,
     .info ul{
-        font-size: 0.6em;
+        font-size: 0.75em;
     }
 
+    .info-anime-video{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   
+    .info-aditional{
+        display: flex;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .video-container{
+        display: flex;
+        height: auto;
+        width: 80%;
+    }
     .styled-select{
         width: 120px;
-    }
-
-    .episodes-container a > img{
-        object-fit: cover;
     }
 
     .episode-info h4{
@@ -330,10 +373,6 @@
     .styled-select{
         width: 100px;
     }
-
-    .episodes-container a > img{
-        object-fit: cover;
-    } 
 }
 @media (max-width: 768px){
 
@@ -375,10 +414,6 @@
         margin-top: 0;
     }
 
-    .episodes-container a > img{
-        object-fit: cover;
-    }
-
     .episode-info h4{
         display: block;
         text-align: start;
@@ -398,6 +433,10 @@
     }
     .sidebar-content button{
         font-size: 0.78em;
+    }
+
+    .video-container{
+        width: 100%;
     }
 
     .episodes-container a > img{
@@ -421,7 +460,6 @@
     .episodes-container a > img{
         max-width: 40%;
         height:auto;
-        object-fit: cover;
     }
 
     .comment-area img {
@@ -439,7 +477,6 @@
     .episodes-container a > img{
         max-width: 40%;
         height:auto;
-        object-fit: cover;
     }
 
     .comment-area img {
