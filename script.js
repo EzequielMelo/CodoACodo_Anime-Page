@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const LogButton = document.getElementById("LogButton");
-    const userInput = document.getElementById("userInput");
-    const title = document.getElementById("title");
-    const LogUp= document.getElementById("LogUp");
-    const LogIn = document.getElementById("LogIn");
-    const forgotID = document.getElementById("forgotID");
+
+    const commentsContainer = document.querySelector('.comments-container');
 
     const maxLength = 350;
     const descriptions = document.querySelectorAll('.text-limit');
@@ -21,28 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
             description.innerHTML = truncatedText;
         }
     });
-    
-    if (LogIn) {
-        LogIn.onclick = function(){
-            userInput.style.maxHeight = "0";
-            title.innerHTML = "Acceder";
-            LogButton.innerHTML = "Acceder";
-            LogIn.style.display = "none";
-            LogUp.style.display = "inline";
-            forgotID.innerHTML = "¿HAS OLVIDADO TU CONTRASEÑA?";
-        }
-    }
-    
-    if (LogUp) {
-        LogUp.onclick = function(){
-            userInput.style.maxHeight = "60px";
-            title.innerHTML = "Registrar";
-            LogButton.innerHTML = "Crear cuenta";
-            LogUp.style.display = "none";
-            LogIn.style.display = "inline";
-            forgotID.innerHTML = "";
-        }
-    }
 
     jQuery.validator.addMethod("exactlength", function(value, element, param) {
         return this.optional(element) || value.length == param;
@@ -129,5 +103,17 @@ document.addEventListener("DOMContentLoaded", function() {
         max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
         min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
     });
+
+    if (commentsContainer) {
+        commentsContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('bi-hand-thumbs-up')) {
+                event.target.classList.remove('bi-hand-thumbs-up');
+                event.target.classList.add('bi-hand-thumbs-up-fill');
+            } else if (event.target.classList.contains('bi-hand-thumbs-up-fill')) {
+                event.target.classList.remove('bi-hand-thumbs-up-fill');
+                event.target.classList.add('bi-hand-thumbs-up');
+            }
+        });
+    }
 });
 
