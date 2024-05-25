@@ -135,15 +135,15 @@
     font-size: 16px;
     border: 2px solid #ccc;
     border-radius: 3px;
-    background-color: #fff;
-    color: #333;
+    background-color: #515966;
+    color: #fff;
     cursor: pointer;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .styled-select:focus {
-    border-color: #66afe9;
+    border-color: #d13d49;;
     box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
