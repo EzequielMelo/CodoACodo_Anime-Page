@@ -467,6 +467,9 @@
         width: 46px;
         height: 46px;
     }
+    .comment-actions i{
+        font-size: 0.85em;
+    }
 }
 
 @media (max-width: 420px){
@@ -478,6 +481,9 @@
         max-width: 40%;
         height:auto;
     }
+    .comment-group{
+        width: 100%;
+    }
     .comment-area img {
         width: 46px;
         height: 46px;
@@ -485,6 +491,10 @@
     .user-photo img{
         width: 46px;
         height: 46px;
+    }
+    .comment-actions i{
+        font-size: 0.8em;
+        padding: 0.1rem;
     }
 }
 
