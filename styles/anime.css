@@ -470,6 +470,11 @@
     .comment-actions i{
         font-size: 0.85em;
     }
+
+    .bi-hand-thumbs-up,
+    .bi-hand-thumbs-up-fill{
+        margin-left: 0.3rem;
+    }
 }
 
 @media (max-width: 420px){

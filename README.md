@@ -5,5 +5,9 @@
 <h3>Página principal</h3>
 <img src="./assets/Anime-index.png" alt="Página índice">
 
-<h3>Footer</h3>
-<img src="./assets/footerPage.png" alt="Footer">
+
+### Pasos a seguir para la conexión a MySQL
+1- Descargamos packege.json: `npm init`<br>
+2- Descargamos node_modules: `npm i mysql`<br>
+3- Iniciamos la Base de datos: `nodemon app.js`<br>
+4- Modificar la connection en caso de ser necesario<br>
