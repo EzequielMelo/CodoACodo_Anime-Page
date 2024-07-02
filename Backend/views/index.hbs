@@ -1,0 +1,121 @@
+<head>
+  <link rel="shortcut icon" href="../assets/letter-a-icon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>{{title}}</title>
+</head>
+
+
+<div id="carouselE1" class="carousel slide carousel-height" data-bs-ride="carousel">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselE1" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <div class="carousel-inner">
+    {{#each (range (filterNonNull data "portadaprincipal") 0 1)}}
+    <div class="carousel-item active">
+      <img src="/images/{{portadaprincipal}}" class="d-block w-100 carousel-img" alt="SoloLeveling">
+      <div class="carousel-caption">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-4">
+            <h3 class="anime-title">{{nombre}}</h3>
+            <p class="text-limit pb-3 pt-3">
+              {{descripcion}}
+            </p>
+            <a href="/anime/{{id}}/{{urlEncode nombre}}" class="btn btn-danger me-2">Ver más</a>
+            <button class="btn btn-outline-secondary me-2">
+              <i class="bi bi-bookmark"></i>
+            </button>
+            <h3 class="pt-5">Mundo Anime</h3>
+            <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    {{#each (range (filterNonNull data "portadaprincipal") 1 3)}}
+    <div class="carousel-item">
+      <img src="/images/{{portadaprincipal}}" class="d-block w-100 carousel-img" alt="SoloLeveling">
+      <div class="carousel-caption">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-4">
+            <h3 class="anime-title">{{nombre}}</h3>
+            <p class="text-limit pb-3 pt-3">
+              {{descripcion}}
+            </p>
+            <a href="/anime/{{id}}/{{urlEncode nombre}}" class="btn btn-danger me-2">Ver más</a>
+            <button class="btn btn-outline-secondary me-2">
+              <i class="bi bi-bookmark"></i>
+            </button>
+            <h3 class="pt-5">Mundo Anime</h3>
+            <p><span class="text-secondary">¡Adentrate a un nuevo mundo de aventuras!</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="row">
+    <div class="col-1">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselE1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="card-section-containter row m-auto">
+  <div class="cards-container">
+    {{#each (range data 0 6)}}
+    <div class="card text-white bg-transparent">
+      <img class="card-img-top" src="/images/{{portada}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">{{nombre}}</p>
+      </div>
+      <a href="/anime/{{id}}/{{urlEncode nombre}}" style="color: white;">
+        <div class="content">
+          <h3>{{nombre}}</h3>
+          <p>{{descripcion}}</p>
+        </div>
+      </a>
+    </div>
+    {{/each}}
+  </div>
+  <div class="cards-container">
+    {{#each (range data 6 12)}}
+    <div class="card text-white bg-transparent">
+      <img class="card-img-top" src="/images/{{portada}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">{{nombre}}</p>
+      </div>
+      <a href="/anime/{{id}}/{{urlEncode nombre}}" style="color: white;">
+        <div class="content">
+          <h3>{{nombre}}</h3>
+          <p>{{descripcion}}</p>
+        </div>
+      </a>
+    </div>
+    {{/each}}
+  </div>
+  <div class="cards-container">
+    {{#each (range data 12 18)}}
+    <div class="card text-white bg-transparent">
+      <img class="card-img-top" src="/images/{{portada}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">{{nombre}}</p>
+      </div>
+      <a href="/anime/{{id}}/{{urlEncode nombre}}" style="color: white;">
+        <div class="content">
+          <h3>{{nombre}}</h3>
+          <p>{{descripcion}}</p>
+        </div>
+      </a>
+    </div>
+    {{/each}}
+  </div>
+</section>

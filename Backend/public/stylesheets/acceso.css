@@ -4,7 +4,6 @@
     padding: 0;
     font-family: "Mukta Malar", sans-serif;
     */
-    box-sizing: border-box;
 }
 
 .container-form{
@@ -32,17 +31,6 @@
     position: relative;
 }
 
-.form-content h1::after{
-    content: '';
-    width: 30px;
-    height: 4px;
-    border-radius: 3px;
-    background: #d13d49;
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 .input-field{
     display: flex;
