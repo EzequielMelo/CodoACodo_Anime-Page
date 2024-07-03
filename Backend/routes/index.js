@@ -24,7 +24,7 @@ hbs.registerHelper('filterNonNull', function (arr, key) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  connection.query('SELECT * FROM anime', function (error, results, fields) {
+  connection.query('SELECT * FROM animes', function (error, results, fields) {
     if (error) throw error;
     res.render('index', {data: results});
   });
@@ -41,7 +41,7 @@ router.get('/anime/:id/:nombre/', function(req, res, next) {
   GROUP_CONCAT(DISTINCT g.genero ORDER BY g.genero SEPARATOR ', ') AS generos,
   GROUP_CONCAT(DISTINCT CONCAT_WS('||', e.id, e.temporada, e.nombre, e.descripcion, e.imagencapitulo, e.linkcapitulo) ORDER BY e.id SEPARATOR ';;') AS episodios
   FROM 
-  anime a
+  animes a
   JOIN 
   animes_generos ag ON a.id = ag.anime_id
   JOIN 

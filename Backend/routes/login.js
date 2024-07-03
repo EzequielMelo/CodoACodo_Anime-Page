@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
   const { usuario, contraseña } = req.body;
 
   try {
-    const checkUserQuery = 'SELECT * FROM usuario WHERE nombre = ?';
+    const checkUserQuery = 'SELECT * FROM usuarios WHERE nombre = ?';
     const [rows] = await connection.promise().query(checkUserQuery, [usuario]);
 
     if (rows.length === 0) {
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Usuario o contraseña incorrectos' });
     }
 
-    req.session.user = { id: user.id, nombre: user.nombre };
+    req.session.user = { id: user.id, nombre: user.nombre, email: user.email, foto: user.foto };
     res.status(200).json({ success: true, message: 'Sesión iniciada' });
   } catch (error) {
     console.error('Error al iniciar sesión:', error);

@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
   // Verificar si el usuario o el email ya existen en la base de datos
   try {
     // Verificar si el usuario o el email ya existen en la base de datos
-    const checkUserQuery = 'SELECT * FROM usuario WHERE nombre = ? OR email = ?';
+    const checkUserQuery = 'SELECT * FROM usuarios WHERE nombre = ? OR email = ?';
     connection.query(checkUserQuery, [usuario, email], async (error, results) => {
       if (error) {
         console.error('Error al verificar usuario:', error);
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
 
       // Si no existe, proceder con el registro
       const hashedPassword = await bcrypt.hash(contraseña, saltRounds);
-      const insertUserQuery = 'INSERT INTO usuario (nombre, email, contrasenia) VALUES (?, ?, ?)';
+      const insertUserQuery = 'INSERT INTO usuarios (nombre, email, contrasenia) VALUES (?, ?, ?)';
       connection.query(insertUserQuery, [usuario, email, hashedPassword], (error, results) => {
         if (error) {
           console.error('Error al registrar usuario:', error);
