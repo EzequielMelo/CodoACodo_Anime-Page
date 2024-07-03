@@ -25,6 +25,8 @@
 .profile-name-container{
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .profile-name-container > h1{
@@ -37,7 +39,7 @@
     flex-direction: column;
     width: 60%;
     margin-top: 20px;
-    padding: 20px;
+    padding: 10px;
     background-color: #1b0e3b;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -132,6 +134,22 @@
 
 .profile-name-container > h1{
     margin-left: 0;
+}
+
+.favorite-container{
+    padding: 0;
+}
+
+.favorite-tittle {
+  padding: 15px;
+}
+
+.card-section-containter {
+  padding-bottom: 20px;
+}
+
+.cards-container {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 }
