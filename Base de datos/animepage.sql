@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 02-07-2024 a las 23:18:08
+-- Tiempo de generación: 04-07-2024 a las 11:06:45
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -61,6 +61,19 @@ INSERT INTO `animes` (`id`, `nombre`, `descripcion`, `portada`, `portadaprincipa
 (16, 'BLUELOCK', 'Yoichi es un joven al que acaban de eliminar junto a su equipo. De pronto recibe una carta donde lo convocan para participar en un extraño experimento sobre fútbol.', 'bluelockcard.jpe', NULL, 'https://www.youtube.com/embed/0bR8i-__Jtg?si=ygjxqE-_8mWfk5CE', 2024, 1),
 (17, 'SPY x FAMILY', 'Todo el mundo tiene una parte de sí mismos que no puede mostrar a los demás.\r\n\r\nEn una era en la que las naciones de todo el mundo se encuentran involucradas en una feroz guerra de información a puerta cerrada, Ostania y Westalis llevan décadas en guerra fría.\r\n\r\nLa División de Inteligencia de Westalis (WISE) envía a su mejor espía, \"Twilight\", en una misión ultrasecreta para vigilar los movimientos de Donovan Desmond, quien dirige el Partido Nacional por la Unidad de Ostania, responsable de bombardear los esfuerzos de paz entre ambos países.', 'spyxfamilycard.jpe', NULL, 'https://www.youtube.com/embed/ofXigq9aIpo?si=nnph4oiqJusm1o5Z', 2022, 0),
 (18, 'The Unwanted Undead Adventurer', 'Rentt Faina se ha pasado los últimos diez años cazando monstruos. Por desgracia, no se le da muy bien su trabajo y se ve atrapado por la rutina, matando limos y goblins, solo por unas pocas monedas al día. Sin embargo, su suerte cambia cuando, un día, encuentra un nuevo camino sin descubrir. Al final del camino se encuentra con un dragón legendario y muere, pero se despierta convertido en un saco de huesos no muerto. En su nueva vida, se propone luchar y subir de nivel para poder regresar, algún día, al mundo de los vivos.', 'theunwantedadventurercard.jpe', NULL, 'https://www.youtube.com/embed/iaYgDqydDoI?si=a1V2oK3f1BBJ15WI', 2024, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `animes_comentarios`
+--
+
+CREATE TABLE `animes_comentarios` (
+  `id` int(11) NOT NULL,
+  `anime_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `comentario` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -235,7 +248,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(50) NOT NULL,
   `email` varchar(500) NOT NULL,
   `contrasenia` varchar(500) NOT NULL,
-  `foto` varchar(200) NOT NULL DEFAULT 'Arcane.jpg',
+  `foto` varchar(200) NOT NULL DEFAULT 'user01.png',
   `tipo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -244,9 +257,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `contrasenia`, `foto`, `tipo`) VALUES
-(8, 'EzzMellow', 'ezequielanthonymelo@gmail.com', '$2b$10$V/LvuUbSvILOeEUWQc5axufvNbHc56NMJRTVLA4N2rl4CbakQ60OC', 'Arcane.jpg', 0),
-(9, 'Juanpalit', 'juanpactz@gmail.com', '$2b$10$M14LSTnUB/YyFf26klaYFuHLM1zyIT9gvK0pit1KxsDssz5XGqmcu', 'Arcane.jpg', 0),
-(10, 'nani', 'nani@hotmail.com', '$2b$10$a2dMeDVFxCrn.mVTGahRxe8boV.SL35GWzo0Mi8RgUP1GHJKs6Ppa', 'Arcane.jpg', 0);
+(8, 'EzzMellow', 'ezequielanthonymelo@gmail.com', '$2b$10$V/LvuUbSvILOeEUWQc5axufvNbHc56NMJRTVLA4N2rl4CbakQ60OC', 'user01.png', 0),
+(9, 'Juanpalit', 'juanpactz@gmail.com', '$2b$10$M14LSTnUB/YyFf26klaYFuHLM1zyIT9gvK0pit1KxsDssz5XGqmcu', 'user01.png', 0),
+(10, 'nani', 'nani@hotmail.com', '$2b$10$a2dMeDVFxCrn.mVTGahRxe8boV.SL35GWzo0Mi8RgUP1GHJKs6Ppa', 'user01.png', 0);
 
 -- --------------------------------------------------------
 
@@ -260,6 +273,35 @@ CREATE TABLE `usuario_favoritos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuario_favoritos`
+--
+
+INSERT INTO `usuario_favoritos` (`usuario_id`, `anime_id`) VALUES
+(8, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `votos`
+--
+
+CREATE TABLE `votos` (
+  `id` int(11) NOT NULL,
+  `anime_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `voto` enum('positivo','negativo') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `votos`
+--
+
+INSERT INTO `votos` (`id`, `anime_id`, `usuario_id`, `voto`) VALUES
+(4, 1, 8, 'positivo'),
+(5, 3, 8, 'positivo'),
+(6, 1, 9, 'positivo');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -267,6 +309,12 @@ CREATE TABLE `usuario_favoritos` (
 -- Indices de la tabla `animes`
 --
 ALTER TABLE `animes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `animes_comentarios`
+--
+ALTER TABLE `animes_comentarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -305,6 +353,14 @@ ALTER TABLE `usuario_favoritos`
   ADD KEY `anime_id` (`anime_id`);
 
 --
+-- Indices de la tabla `votos`
+--
+ALTER TABLE `votos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `anime_id` (`anime_id`),
+  ADD KEY `usuario_id` (`usuario_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -313,6 +369,12 @@ ALTER TABLE `usuario_favoritos`
 --
 ALTER TABLE `animes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `animes_comentarios`
+--
+ALTER TABLE `animes_comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `episodios`
@@ -331,6 +393,12 @@ ALTER TABLE `generos`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `votos`
+--
+ALTER TABLE `votos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
@@ -355,6 +423,13 @@ ALTER TABLE `episodios`
 ALTER TABLE `usuario_favoritos`
   ADD CONSTRAINT `usuario_favoritos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
   ADD CONSTRAINT `usuario_favoritos_ibfk_2` FOREIGN KEY (`anime_id`) REFERENCES `animes` (`id`);
+
+--
+-- Filtros para la tabla `votos`
+--
+ALTER TABLE `votos`
+  ADD CONSTRAINT `votos_ibfk_1` FOREIGN KEY (`anime_id`) REFERENCES `animes` (`id`),
+  ADD CONSTRAINT `votos_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
