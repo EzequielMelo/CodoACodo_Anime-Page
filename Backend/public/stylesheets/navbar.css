@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(180deg, rgba(21,31,46,1) 45%, rgba(16,0,43,1) 80%);
+  background: linear-gradient(180deg, rgba(21, 31, 46, 1) 45%, rgba(16, 0, 43, 1) 80%);
 }
 
 ::selection {
@@ -7,55 +7,55 @@ body {
   color: #d13d49;
 }
 
-.navbar{
+.navbar {
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   padding: 0;
 }
 
-.nav-icons li{
+.nav-icons li {
   padding: 0.7rem;
   margin-bottom: auto;
   margin-top: auto;
 }
 
-.nav-icon{
+.nav-icon {
   font-size: 1.3rem;
   color: white;
   cursor: pointer;
 }
 
-.nav-icons li:hover{
+.nav-icons li:hover {
   background-color: rgb(12, 18, 27);
   cursor: pointer;
   margin-bottom: auto;
   margin-top: auto;
 }
 
-.dropdown-menu li:hover{
+.dropdown-menu li:hover {
   background-color: transparent;
   cursor: pointer;
   margin-bottom: auto;
   margin-top: auto;
 }
 
-.searchbar{
+.searchbar {
   margin-bottom: auto;
   margin-top: auto;
 }
 
-.search_input{
+.search_input {
   color: white;
   border: 0;
   outline: 0;
   background: none;
   width: 0;
-  caret-color:transparent;
+  caret-color: transparent;
   transition: width 0.4s linear;
 }
 
-.searchbar:hover > .search_input{
+.searchbar:hover>.search_input {
   width: 250px;
-  caret-color:red;
+  caret-color: red;
   transition: width 0.4s linear;
 }
 
@@ -90,10 +90,11 @@ html {
   border-radius: 10px;
 }
 
-@media (max-width: 990px){
-  .searchbar:hover > .search_input{
-    width: 90%;;
-    caret-color:red;
+@media (max-width: 990px) {
+  .searchbar:hover>.search_input {
+    width: 90%;
+    ;
+    caret-color: red;
     transition: width 0.4s linear;
   }
 }

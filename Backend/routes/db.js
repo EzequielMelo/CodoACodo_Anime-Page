@@ -1,10 +1,10 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'animepage'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'animepage'
 });
 
 connection.connect(err => {

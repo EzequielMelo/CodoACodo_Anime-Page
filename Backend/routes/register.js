@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 router.get('/', (req, res) => {
-    res.render('register');
+  res.render('register');
 });
 
 router.post('/', async (req, res) => {

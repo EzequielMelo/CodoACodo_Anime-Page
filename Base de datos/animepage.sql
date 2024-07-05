@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 04-07-2024 a las 11:06:45
+-- Tiempo de generación: 05-07-2024 a las 12:20:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -61,19 +61,6 @@ INSERT INTO `animes` (`id`, `nombre`, `descripcion`, `portada`, `portadaprincipa
 (16, 'BLUELOCK', 'Yoichi es un joven al que acaban de eliminar junto a su equipo. De pronto recibe una carta donde lo convocan para participar en un extraño experimento sobre fútbol.', 'bluelockcard.jpe', NULL, 'https://www.youtube.com/embed/0bR8i-__Jtg?si=ygjxqE-_8mWfk5CE', 2024, 1),
 (17, 'SPY x FAMILY', 'Todo el mundo tiene una parte de sí mismos que no puede mostrar a los demás.\r\n\r\nEn una era en la que las naciones de todo el mundo se encuentran involucradas en una feroz guerra de información a puerta cerrada, Ostania y Westalis llevan décadas en guerra fría.\r\n\r\nLa División de Inteligencia de Westalis (WISE) envía a su mejor espía, \"Twilight\", en una misión ultrasecreta para vigilar los movimientos de Donovan Desmond, quien dirige el Partido Nacional por la Unidad de Ostania, responsable de bombardear los esfuerzos de paz entre ambos países.', 'spyxfamilycard.jpe', NULL, 'https://www.youtube.com/embed/ofXigq9aIpo?si=nnph4oiqJusm1o5Z', 2022, 0),
 (18, 'The Unwanted Undead Adventurer', 'Rentt Faina se ha pasado los últimos diez años cazando monstruos. Por desgracia, no se le da muy bien su trabajo y se ve atrapado por la rutina, matando limos y goblins, solo por unas pocas monedas al día. Sin embargo, su suerte cambia cuando, un día, encuentra un nuevo camino sin descubrir. Al final del camino se encuentra con un dragón legendario y muere, pero se despierta convertido en un saco de huesos no muerto. En su nueva vida, se propone luchar y subir de nivel para poder regresar, algún día, al mundo de los vivos.', 'theunwantedadventurercard.jpe', NULL, 'https://www.youtube.com/embed/iaYgDqydDoI?si=a1V2oK3f1BBJ15WI', 2024, 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `animes_comentarios`
---
-
-CREATE TABLE `animes_comentarios` (
-  `id` int(11) NOT NULL,
-  `anime_id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `comentario` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -151,6 +138,29 @@ INSERT INTO `animes_generos` (`anime_id`, `genero_id`) VALUES
 (17, 10),
 (18, 1),
 (18, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL,
+  `anime_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `comentario` text NOT NULL,
+  `valoracion` int(11) DEFAULT NULL CHECK (`valoracion` >= 0 and `valoracion` <= 5),
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id`, `anime_id`, `usuario_id`, `comentario`, `valoracion`, `fecha`) VALUES
+(1, 1, 8, 'hola xD', 5, '2024-07-05 09:26:06'),
+(2, 1, 9, 'Muy buen anime che, recomendado la verdad', 5, '2024-07-05 10:04:31');
 
 -- --------------------------------------------------------
 
@@ -240,6 +250,20 @@ INSERT INTO `generos` (`id`, `genero`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `respuestas`
+--
+
+CREATE TABLE `respuestas` (
+  `id` int(11) NOT NULL,
+  `comentario_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `respuesta` text NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -277,7 +301,11 @@ CREATE TABLE `usuario_favoritos` (
 --
 
 INSERT INTO `usuario_favoritos` (`usuario_id`, `anime_id`) VALUES
-(8, 1);
+(8, 1),
+(8, 4),
+(8, 11),
+(9, 1),
+(9, 4);
 
 -- --------------------------------------------------------
 
@@ -299,7 +327,10 @@ CREATE TABLE `votos` (
 INSERT INTO `votos` (`id`, `anime_id`, `usuario_id`, `voto`) VALUES
 (4, 1, 8, 'positivo'),
 (5, 3, 8, 'positivo'),
-(6, 1, 9, 'positivo');
+(6, 1, 9, 'positivo'),
+(7, 4, 8, 'positivo'),
+(8, 4, 9, 'positivo'),
+(9, 2, 9, 'positivo');
 
 --
 -- Índices para tablas volcadas
@@ -312,18 +343,20 @@ ALTER TABLE `animes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `animes_comentarios`
---
-ALTER TABLE `animes_comentarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `animes_generos`
 --
 ALTER TABLE `animes_generos`
   ADD PRIMARY KEY (`anime_id`,`genero_id`),
   ADD KEY `genero_id` (`genero_id`) USING BTREE,
   ADD KEY `anime_id` (`anime_id`) USING BTREE;
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `usuario_id` (`usuario_id`),
+  ADD KEY `anime_id` (`anime_id`);
 
 --
 -- Indices de la tabla `episodios`
@@ -337,6 +370,14 @@ ALTER TABLE `episodios`
 --
 ALTER TABLE `generos`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `respuestas`
+--
+ALTER TABLE `respuestas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comentario_id` (`comentario_id`),
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -371,10 +412,10 @@ ALTER TABLE `animes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT de la tabla `animes_comentarios`
+-- AUTO_INCREMENT de la tabla `comentarios`
 --
-ALTER TABLE `animes_comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `episodios`
@@ -389,6 +430,12 @@ ALTER TABLE `generos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT de la tabla `respuestas`
+--
+ALTER TABLE `respuestas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -398,7 +445,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `votos`
 --
 ALTER TABLE `votos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
@@ -412,10 +459,24 @@ ALTER TABLE `animes_generos`
   ADD CONSTRAINT `animes_generos_ibfk_2` FOREIGN KEY (`anime_id`) REFERENCES `animes` (`id`) ON DELETE CASCADE;
 
 --
+-- Filtros para la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`anime_id`) REFERENCES `animes` (`id`);
+
+--
 -- Filtros para la tabla `episodios`
 --
 ALTER TABLE `episodios`
   ADD CONSTRAINT `episodios_ibfk_1` FOREIGN KEY (`anime_id`) REFERENCES `animes` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `respuestas`
+--
+ALTER TABLE `respuestas`
+  ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`comentario_id`) REFERENCES `comentarios` (`id`),
+  ADD CONSTRAINT `respuestas_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `usuario_favoritos`

@@ -1,16 +1,16 @@
-document.getElementById('form-account').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById('form-account').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const user = Object.fromEntries(formData.entries());
+  const formData = new FormData(event.target);
+  const user = Object.fromEntries(formData.entries());
 
-    fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
     .then(response => response.json())
     .then(data => {
       if (data.success) {
@@ -41,4 +41,4 @@ document.getElementById('form-account').addEventListener('submit', function(even
         confirmButtonText: 'OK'
       });
     });
-  });
+});
