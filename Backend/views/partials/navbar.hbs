@@ -11,10 +11,15 @@
       <div class="collapse navbar-collapse" id="navbar-start">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-icons">
           <li class="nav-item dropdown">
-            <div class="searchbar">
-              <input class="search_input" type="text" placeholder="Buscar...">
-              <a href="#" class="search_icon"><span class="bi bi-search nav-icon"></span></a>
-            </div>
+            <form id="search-form">
+              <div class="searchbar">
+                <input id="search-input" class="search_input" type="search" class="form-control me-2"
+                  placeholder="Buscar..." aria-label="Buscar">
+                <button id="search-button" type="submit" class="search_icon">
+                  <span class="bi bi-search nav-icon"></span>
+                </button>
+              </div>
+            </form>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,3 +40,5 @@
     </div>
   </nav>
 </header>
+
+<script src="/javascripts/searchhandler.js"></script>

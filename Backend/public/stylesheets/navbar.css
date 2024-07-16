@@ -59,6 +59,14 @@ body {
   transition: width 0.4s linear;
 }
 
+.search_icon {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  caret-color: transparent;
+}
+
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -93,8 +101,15 @@ html {
 @media (max-width: 990px) {
   .searchbar:hover>.search_input {
     width: 90%;
-    ;
-    caret-color: red;
-    transition: width 0.4s linear;
+  }
+
+  .search_icon {
+    margin-left: -12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .searchbar:hover>.search_input {
+    width: 88%;
   }
 }

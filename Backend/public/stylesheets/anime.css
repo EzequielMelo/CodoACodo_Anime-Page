@@ -240,6 +240,7 @@
   width: 46px;
   height: 46px;
   border-radius: 50px;
+  object-fit: cover;
 }
 
 .comment-area textarea {
@@ -277,7 +278,9 @@
   display: flex;
   width: 90%;
   border-bottom: 1px solid rgba(191, 191, 191, 0.174);
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 
@@ -286,11 +289,19 @@
   margin-right: 10px;
 }
 
+.user-comment {
+  width: 100%;
+}
+
 .user-photo img {
   width: 46px;
   height: 46px;
   border-radius: 50px;
   object-fit: cover;
+}
+
+.comment-actions {
+  margin-bottom: 8px;
 }
 
 .comment-actions i {
@@ -301,6 +312,31 @@
 .comment-actions i:hover {
   color: #fff;
   cursor: pointer;
+}
+
+.response {
+  display: flex;
+  border-top: 1px solid rgba(191, 191, 191, 0.174);
+  padding: 0.7rem;
+}
+
+.response-form textarea {
+  resize: none;
+  font-size: 1em;
+  border-radius: 3px;
+  width: 100%;
+  height: 50px;
+}
+
+.response-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.response-button button {
+  margin-top: 2px;
+  margin-bottom: 8px;
+  font-size: 0.8em;
 }
 
 @media (max-width: 1400px) {

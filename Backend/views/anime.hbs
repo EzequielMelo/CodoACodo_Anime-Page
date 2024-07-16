@@ -136,9 +136,34 @@
             <p> {{valoracion}}⭐</p>
             <p>{{comentario}}</p>
             <div class="comment-actions">
-              <i class="bi bi-reply"> Responder</i>
-              <i class="bi bi-hand-thumbs-up"> +8.5k</i>
+              {{#hasResponses respuestas}}
+              <i class="bi bi-caret-down show-responses"> Respuestas</i>
+              {{/hasResponses}}
+              {{#if ../isAuthenticated}}
+              <i class="bi bi-reply showTextArea"> Responder</i>
+              {{/if}}
             </div>
+            <div class="responses" style="display: none;">
+              {{#each respuestas}}
+              <div class="response">
+                <div class="user-photo">
+                  <img src="/images/{{usuario_foto}}" alt="user-photo">
+                </div>
+                <div class="user-response">
+                  <p>{{usuario_nombre}}</p>
+                  <p>{{respuesta}}</p>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+            {{#if ../isAuthenticated}}
+            <form class="response-form" data-comentario-id="{{id}}" style="display: none;">
+              <textarea name="respuesta" placeholder="Escribe una respuesta..."></textarea>
+              <div class="response-button">
+                <button type="submit" class="btn btn-danger">Responder</button>
+              </div>
+            </form>
+            {{/if}}
           </div>
         </div>
         {{/each}}

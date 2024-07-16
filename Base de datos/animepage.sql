@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 05-07-2024 a las 12:20:47
+-- Tiempo de generación: 16-07-2024 a las 12:27:01
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -160,7 +160,8 @@ CREATE TABLE `comentarios` (
 
 INSERT INTO `comentarios` (`id`, `anime_id`, `usuario_id`, `comentario`, `valoracion`, `fecha`) VALUES
 (1, 1, 8, 'hola xD', 5, '2024-07-05 09:26:06'),
-(2, 1, 9, 'Muy buen anime che, recomendado la verdad', 5, '2024-07-05 10:04:31');
+(2, 1, 9, 'Muy buen anime che, recomendado la verdad', 5, '2024-07-05 10:04:31'),
+(3, 4, 9, 'Me gustaría realmente que salga la segunda temporada', 5, '2024-07-12 07:04:52');
 
 -- --------------------------------------------------------
 
@@ -261,6 +262,15 @@ CREATE TABLE `respuestas` (
   `fecha` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `respuestas`
+--
+
+INSERT INTO `respuestas` (`id`, `comentario_id`, `usuario_id`, `respuesta`, `fecha`) VALUES
+(1, 1, 8, 'holaaaa', '2024-07-09 00:08:37'),
+(2, 1, 8, 'xD', '2024-07-09 00:23:09'),
+(3, 2, 8, 'Si, la verdad me gusto bastante estoy esperando la próxima temporada a ver cuando sale', '2024-07-12 06:17:47');
+
 -- --------------------------------------------------------
 
 --
@@ -272,7 +282,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(50) NOT NULL,
   `email` varchar(500) NOT NULL,
   `contrasenia` varchar(500) NOT NULL,
-  `foto` varchar(200) NOT NULL DEFAULT 'user01.png',
+  `foto_id` int(11) NOT NULL DEFAULT 1,
   `tipo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -280,10 +290,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `email`, `contrasenia`, `foto`, `tipo`) VALUES
-(8, 'EzzMellow', 'ezequielanthonymelo@gmail.com', '$2b$10$V/LvuUbSvILOeEUWQc5axufvNbHc56NMJRTVLA4N2rl4CbakQ60OC', 'user01.png', 0),
-(9, 'Juanpalit', 'juanpactz@gmail.com', '$2b$10$M14LSTnUB/YyFf26klaYFuHLM1zyIT9gvK0pit1KxsDssz5XGqmcu', 'user01.png', 0),
-(10, 'nani', 'nani@hotmail.com', '$2b$10$a2dMeDVFxCrn.mVTGahRxe8boV.SL35GWzo0Mi8RgUP1GHJKs6Ppa', 'user01.png', 0);
+INSERT INTO `usuarios` (`id`, `nombre`, `email`, `contrasenia`, `foto_id`, `tipo`) VALUES
+(8, 'EzzMellow', 'ezequielanthonymelo@gmail.com', '$2b$10$V/LvuUbSvILOeEUWQc5axufvNbHc56NMJRTVLA4N2rl4CbakQ60OC', 3, 0),
+(9, 'Juanpalit', 'juanpactz@gmail.com', '$2b$10$M14LSTnUB/YyFf26klaYFuHLM1zyIT9gvK0pit1KxsDssz5XGqmcu', 11, 0),
+(10, 'nani', 'nani@hotmail.com', '$2b$10$a2dMeDVFxCrn.mVTGahRxe8boV.SL35GWzo0Mi8RgUP1GHJKs6Ppa', 5, 0);
 
 -- --------------------------------------------------------
 
@@ -303,9 +313,39 @@ CREATE TABLE `usuario_favoritos` (
 INSERT INTO `usuario_favoritos` (`usuario_id`, `anime_id`) VALUES
 (8, 1),
 (8, 4),
+(8, 9),
 (8, 11),
 (9, 1),
 (9, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_fotos`
+--
+
+CREATE TABLE `usuario_fotos` (
+  `id` int(11) NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario_fotos`
+--
+
+INSERT INTO `usuario_fotos` (`id`, `foto`) VALUES
+(1, 'user01.png'),
+(2, 'mikasa.jpg'),
+(3, 'Arcane.jpg'),
+(4, 'satorugojo.jpg'),
+(5, 'tokyoghoul.jpg'),
+(6, 'eren.jpg'),
+(7, 'itachi.jpg'),
+(8, 'l.png'),
+(9, 'levi.jpg'),
+(10, 'nobara.jpg'),
+(11, 'lucy.jpg'),
+(12, 'david.jpg');
 
 -- --------------------------------------------------------
 
@@ -394,6 +434,12 @@ ALTER TABLE `usuario_favoritos`
   ADD KEY `anime_id` (`anime_id`);
 
 --
+-- Indices de la tabla `usuario_fotos`
+--
+ALTER TABLE `usuario_fotos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `votos`
 --
 ALTER TABLE `votos`
@@ -415,7 +461,7 @@ ALTER TABLE `animes`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `episodios`
@@ -433,13 +479,19 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario_fotos`
+--
+ALTER TABLE `usuario_fotos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `votos`

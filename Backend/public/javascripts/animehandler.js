@@ -146,34 +146,131 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const commentForm = document.getElementById('add-comment-form');
 
-  commentForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const commentText = document.getElementById('comment-text').value;
-    const rating = document.getElementById('rating').value;
-    const animeId = this.getAttribute('data-anime-id');
+  if (commentForm) {
+    commentForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const commentText = document.getElementById('comment-text').value;
+      const rating = document.getElementById('rating').value;
+      const animeId = this.getAttribute('data-anime-id');
 
-    fetch(`/comments/${animeId}/comentarios`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ comentario: commentText, valoracion: rating })
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          alert('Comentario añadido');
-          location.reload(); // Recargar la página para ver el nuevo comentario
-        } else {
-          alert(data.message);
-        }
+      fetch(`/comments/${animeId}/comentarios`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ comentario: commentText, valoracion: rating })
       })
-      .catch(error => {
-        console.error('Error al añadir comentario:', error);
-      });
-  });
-  // Lógica similar para respuestas a comentarios
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            location.reload(); // Recargar la página para ver el nuevo comentario
+          } else {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: (data.message),
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error al añadir comentario:', error);
+        });
+    });
+  }
 
+  /*---------------------------------LOGICA RESPUESTAS A COMENTARIOS---------------------------------*/
+
+  const responseForms = document.querySelectorAll('.response-form');
+
+  responseForms.forEach(form => {
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const comentarioId = form.getAttribute('data-comentario-id');
+      const respuestaText = form.querySelector('textarea').value;
+
+      if (respuestaText.trim() === '') {
+        Swal.fire({
+          position: "top-end",
+          icon: 'error',
+          title: "La respuesta no puede estar vacía.",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        return;
+      }
+
+      try {
+        const response = await fetch(`/comments/${comentarioId}/respuestas`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ respuesta: respuestaText })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Recargar los comentarios para incluir la nueva respuesta
+          location.reload();
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: 'error',
+            title: "Error al agregar respuesta.",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      } catch (error) {
+        Swal.fire({
+          position: "top-end",
+          icon: 'error',
+          title: "Error al agregar respuesta."(error),
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    });
+  });
+
+  // Selecciona todos los botones de mostrar respuestas
+  const showResponseButtons = document.querySelectorAll('.show-responses');
+
+  if (showResponseButtons) {
+    showResponseButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Encuentra el contenedor de respuestas más cercano
+        const responses = this.closest('.user-comment').querySelector('.responses');
+
+        // Alterna la visibilidad del contenedor de respuestas
+        if (responses.style.display === 'none') {
+          responses.style.display = 'block';
+        } else {
+          responses.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  const showResponseTextArea = document.querySelectorAll('.showTextArea');
+  if (showResponseTextArea) {
+    showResponseTextArea.forEach(button => {
+      button.addEventListener('click', function () {
+        // Encuentra el contenedor de respuestas más cercano
+        const textAreas = this.closest('.user-comment').querySelector('.response-form');
+
+        // Alterna la visibilidad del contenedor de respuestas
+        if (textAreas.style.display === 'none') {
+          textAreas.style.display = 'block';
+        } else {
+          textAreas.style.display = 'none';
+        }
+      });
+    });
+  }
 });
 
 

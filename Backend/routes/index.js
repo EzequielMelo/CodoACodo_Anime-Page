@@ -22,6 +22,14 @@ hbs.registerHelper('filterNonNull', function (arr, key) {
   return arr.filter(item => item[key] !== null);
 });
 
+hbs.registerHelper('hasResponses', function (array, options) {
+  if (array && array.length > 0) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   connection.query('SELECT * FROM animes', function (error, results, fields) {
@@ -69,11 +77,25 @@ router.get('/anime/:id/:nombre/', async (req, res) => {
     );
 
     const [comments] = await connection.promise().query(
-      `SELECT c.*, u.nombre AS usuario_nombre, u.foto AS usuario_foto
+      `SELECT c.*, u.nombre AS usuario_nombre, uf.foto AS usuario_foto
       FROM comentarios c
       JOIN usuarios u ON c.usuario_id = u.id
+      JOIN usuario_fotos uf ON u.foto_id = uf.id
       WHERE c.anime_id = ?`, [animeId]
     );
+
+    // Añade respuestas a cada comentario
+    for (const comentario of comments) {
+      const [responses] = await connection.promise().query(
+        `SELECT r.*, u.nombre AS usuario_nombre, uf.foto AS usuario_foto
+         FROM respuestas r
+         JOIN usuarios u ON r.usuario_id = u.id
+         JOIN usuario_fotos uf ON u.foto_id = uf.id
+         WHERE r.comentario_id = ?`,
+        [comentario.id]
+      );
+      comentario.respuestas = responses;
+    }
 
     if (results.length > 0) {
       var anime = results[0];
@@ -97,7 +119,6 @@ router.get('/anime/:id/:nombre/', async (req, res) => {
       const totalVotos = voteCounts[0].total_votos;
       const porcentajeRecomendado = totalVotos > 0 ? (voteCounts[0].votos_positivos / totalVotos) * 100 : 0;
 
-
       const isAuthenticated = req.session.user ? true : false;
 
       res.render('anime', {
@@ -117,5 +138,6 @@ router.get('/anime/:id/:nombre/', async (req, res) => {
     res.status(500).json({ success: false, message: 'Error al obtener el anime' });
   }
 });
+
 
 module.exports = router;
