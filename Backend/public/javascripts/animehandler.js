@@ -180,6 +180,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /*---------------------------------LOGICA ELIMINAR COMENTARIO---------------------------------*/
+
+  document.querySelectorAll('.deleteComment').forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      const commentId = this.closest('.user-comment').getAttribute('data-comment-id');
+      console.log(commentId)
+
+      fetch(`/comments/${commentId}/comentarios/borrar`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ comentarioId: commentId })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            location.reload(); // Recargar la página para ver el comentario borrado
+          } else {
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: data.message,
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error al borrar comentario:', error);
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: 'Error al borrar comentario',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        });
+    });
+  });
+
   /*---------------------------------LOGICA RESPUESTAS A COMENTARIOS---------------------------------*/
 
   const responseForms = document.querySelectorAll('.response-form');
@@ -271,6 +313,48 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+  /*---------------------------------LOGICA ELIMINAR RESPUESTAS---------------------------------*/
+
+  document.querySelectorAll('.deleteResponse').forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      const responseId = this.closest('.response').getAttribute('data-response-id');
+      const commentId = this.closest('.user-comment').getAttribute('data-comment-id');
+      console.log(responseId);
+      console.log(commentId);
+
+      fetch(`/comments/${commentId}/${responseId}/borrar`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ respuestaId: responseId, comentarioId: commentId })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            location.reload(); // Recargar la página para ver el comentario borrado
+          } else {
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: data.message,
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error al borrar respuesta:', error);
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: 'Error al borrar respuesta',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        });
+    });
+  });
+
 });
-
-

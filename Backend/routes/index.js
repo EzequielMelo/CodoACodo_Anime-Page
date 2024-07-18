@@ -30,6 +30,10 @@ hbs.registerHelper('hasResponses', function (array, options) {
   }
 });
 
+hbs.registerHelper('areEqualIds', function (id1, id2) {
+  return id1 === id2;
+});
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   connection.query('SELECT * FROM animes', function (error, results, fields) {
@@ -117,11 +121,12 @@ router.get('/anime/:id/:nombre/', async (req, res) => {
       }
 
       const totalVotos = voteCounts[0].total_votos;
-      const porcentajeRecomendado = totalVotos > 0 ? (voteCounts[0].votos_positivos / totalVotos) * 100 : 0;
+      const porcentajeRecomendado = totalVotos > 0 ? Math.round((voteCounts[0].votos_positivos / totalVotos) * 100) : 0;
 
       const isAuthenticated = req.session.user ? true : false;
 
       res.render('anime', {
+        userId,
         anime: anime,
         user: req.session.user,
         isFavorite,

@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
     console.log(userPhoto)
 
     // Almacenar datos del usuario en la sesión
-    req.session.user = { id: user.id, nombre: user.nombre, email: user.email, foto: userPhoto };
+    req.session.user = { id: user.id, nombre: user.nombre, email: user.email, foto: userPhoto, tipo: user.tipo };
 
     res.status(200).json({ success: true, message: 'Sesión iniciada' });
   } catch (error) {

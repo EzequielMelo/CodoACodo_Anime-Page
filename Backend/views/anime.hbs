@@ -131,7 +131,7 @@
           <div class="user-photo">
             <img src="/images/{{usuario_foto}}" alt="user-photo">
           </div>
-          <div class="user-comment">
+          <div class="user-comment" data-comment-id="{{id}}">
             <p>{{usuario_nombre}}</p>
             <p> {{valoracion}}⭐</p>
             <p>{{comentario}}</p>
@@ -141,17 +141,27 @@
               {{/hasResponses}}
               {{#if ../isAuthenticated}}
               <i class="bi bi-reply showTextArea"> Responder</i>
+              {{#if (areEqualIds usuario_id ../user.id)}}
+              <i class="bi bi-trash2 deleteComment"> Borrar</i>
+              {{/if}}
               {{/if}}
             </div>
             <div class="responses" style="display: none;">
               {{#each respuestas}}
-              <div class="response">
+              <div class="response" data-response-id="{{id}}">
                 <div class="user-photo">
                   <img src="/images/{{usuario_foto}}" alt="user-photo">
                 </div>
                 <div class="user-response">
                   <p>{{usuario_nombre}}</p>
                   <p>{{respuesta}}</p>
+                  <div class="comment-actions">
+                    {{#if ../../isAuthenticated}}
+                    {{#if (areEqualIds usuario_id ../../user.id)}}
+                    <i class="bi bi-trash2 deleteResponse"> Borrar</i>
+                    {{/if}}
+                    {{/if}}
+                  </div>
                 </div>
               </div>
               {{/each}}
