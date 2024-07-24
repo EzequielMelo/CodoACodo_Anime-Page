@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('./db'); // Importa tu configuración de base de datos
-const isAuthenticated = require('../public/middleware/authmiddleware');
+const isAuthenticated = require('../public/middleware/isAuthenticated');
 
 // Ruta para añadir un comentario
 router.post('/:animeId/comentarios', isAuthenticated, async (req, res) => {

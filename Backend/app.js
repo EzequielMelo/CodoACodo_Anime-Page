@@ -17,6 +17,7 @@ var favoritesRouter = require('./routes/favorites');
 var votesRouter = require('./routes/votes');
 var commentsRouter = require('./routes/comments');
 var searchRouter = require('./routes/search');
+var adminDashboardRouter = require('./routes/adminDashboard');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use(session({
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session && req.session.user;
   res.locals.user = req.session ? req.session.user : null;
+  res.locals.isAdmin = req.session && req.session.user && req.session.user.tipo === 1;
   next();
 });
 
@@ -57,6 +59,7 @@ app.use('/favorites', favoritesRouter);
 app.use('/votes', votesRouter);
 app.use('/comments', commentsRouter);
 app.use('/search', searchRouter)
+app.use('/adminDashboard', adminDashboardRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

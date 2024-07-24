@@ -28,6 +28,9 @@
             <ul class="dropdown-menu dropdown-menu-end bg-dark-subtle">
               {{#if isAuthenticated}}
               <li><a class="dropdown-item" href="/myprofile">Mi Cuenta</a></li>
+              {{#if isAdmin}}
+              <li><a class="dropdown-item" href="/adminDashboard">Panel de control</a></li>
+              {{/if}}
               <li><a class="dropdown-item" href="/logout">Cerrar Sesión</a></li>
               {{else}}
               <li><a class="dropdown-item" href="/login">Acceder</a></li>

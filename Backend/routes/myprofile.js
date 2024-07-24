@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var connection = require('./db');
-const isAuthenticated = require('../public/middleware/authmiddleware');
+const isAuthenticated = require('../public/middleware/isAuthenticated');
 
 router.get('/', isAuthenticated, async (req, res) => {
 

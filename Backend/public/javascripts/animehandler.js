@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
   const seasonSelect = document.getElementById('season-select');
   const episodeList = document.getElementById('episode-list');

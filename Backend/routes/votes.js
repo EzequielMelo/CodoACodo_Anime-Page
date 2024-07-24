@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var hbs = require('hbs');
 var router = express.Router();
 var connection = require('./db');
-const isAuthenticated = require('../public/middleware/authmiddleware');
+const isAuthenticated = require('../public/middleware/isAuthenticated');
 
 router.post('/:animeId', isAuthenticated, async (req, res) => {
   const animeId = req.params.animeId;
