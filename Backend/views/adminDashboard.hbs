@@ -17,8 +17,105 @@
 {{#if isAdmin}}
 <div class="main-content">
   {{> sidebar }}
-  <h1>Bienvenido al Panel de Control</h1>
-  <!-- Contenido del dashboard -->
+  <div class="dashboard">
+    <h1>Panel de control</h1>
+    <div class="angry-grid">
+      <div id="item-0">
+        <div class="admin-image">
+          <img src="/images/{{user.foto}}" alt="portada-anime">
+        </div>
+        <div class="admin-data">
+          <h1>Administrador:</h1>
+          <h2>{{user.nombre}}</h2>
+        </div>
+      </div>
+      <div id="item-1">
+        <div class="card-tittle">
+          <div class="tittle">
+            <h1>Animes:</h1>
+          </div>
+          <img src="/images/jujutsukaisencard.jpe" alt="portada-anime">
+        </div>
+        <div class="admin-data">
+          <a href="#" class="">
+            <i class="lni lni-circle-plus"></i>
+            <span>Añadir anime</span>
+          </a>
+          <a href="#" class="">
+            <i class="lni lni-circle-minus"></i>
+            <span>Eliminar anime</span>
+          </a>
+        </div>
+      </div>
+      <div id="item-2">
+        <div class="card-tittle">
+          <div class="tittle">
+            <h1>Episodios:</h1>
+          </div>
+          <img src="/images/episode.png" alt="portada-anime">
+        </div>
+        <div class="admin-data">
+          <a href="#" class="">
+            <i class="lni lni-circle-plus"></i>
+            <span>Añadir episodio</span>
+          </a>
+          <a href="#" class="">
+            <i class="lni lni-circle-minus"></i>
+            <span>Eliminar episodio</span>
+          </a>
+        </div>
+      </div>
+      <div id="item-3">
+        <div class="card-tittle">
+          <div class="tittle">
+            <h1>Noticias:</h1>
+          </div>
+          <img src="/images/news.png" alt="portada-anime">
+        </div>
+        <div class="admin-data">
+          <a href="#" class="">
+            <i class="lni lni-circle-plus"></i>
+            <span>Añadir noticia</span>
+          </a>
+          <a href="#" class="">
+            <i class="lni lni-circle-minus"></i>
+            <span>Eliminar noticia</span>
+          </a>
+        </div>
+      </div>
+      <div id="item-4">
+        <div class="card-tittle">
+          <div class="tittle">
+            <h1>Permisos:</h1>
+          </div>
+          <img src="/images/auth.png" alt="portada-anime">
+        </div>
+        <div class="admin-data">
+          <a href="#" class="">
+            <i class="lni lni-pencil"></i>
+            <span>Administrar permisos</span>
+          </a>
+        </div>
+      </div>
+      <div id="item-5">
+        <div class="card-tittle">
+          <div class="tittle">
+            <h1>Metricas:</h1>
+          </div>
+          <img src="/images/metrics.png" alt="portada-anime">
+        </div>
+        <div class="admin-data">
+          <a href="#" class="">
+            <i class="lni lni-stats-up"></i>
+            <span>Ver metricas del sitio</span>
+          </a>
+        </div>
+      </div>
+      <div id="item-6">
+
+      </div>
+    </div>
+  </div>
 </div>
 {{/if}}
 {{/if}}
