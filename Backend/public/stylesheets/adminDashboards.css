@@ -155,5 +155,9 @@
   grid-row-end: 4;
   grid-column-end: 7;
   border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
 
 }
