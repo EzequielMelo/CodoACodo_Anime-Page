@@ -23,7 +23,7 @@
 
 #item-0 {
 
-  background-color: #B57CD5;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 2;
@@ -48,7 +48,7 @@
 
 #item-1 {
 
-  background-color: #A9A69D;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 1;
   grid-column-start: 3;
   grid-row-end: 2;
@@ -79,12 +79,12 @@
 }
 
 .admin-data>a:hover {
-  color: darkblue;
+  color: rgb(255, 64, 96)
 }
 
 #item-2 {
 
-  background-color: #C77FD5;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 1;
   grid-column-start: 5;
 
@@ -100,7 +100,7 @@
 
 #item-3 {
 
-  background-color: #EEE75C;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 2;
   grid-column-start: 1;
 
@@ -116,7 +116,7 @@
 
 #item-4 {
 
-  background-color: #8A5C78;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 2;
   grid-column-start: 4;
 
@@ -132,7 +132,7 @@
 
 #item-5 {
 
-  background-color: #BD778B;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 3;
   grid-column-start: 1;
 
@@ -148,7 +148,7 @@
 
 #item-6 {
 
-  background-color: #D8AA89;
+  background-color: rgba(11, 18, 21, 0.87);
   grid-row-start: 3;
   grid-column-start: 4;
 
