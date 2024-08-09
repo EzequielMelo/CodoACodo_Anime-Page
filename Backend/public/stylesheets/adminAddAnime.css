@@ -1,0 +1,86 @@
+.main-content {
+  display: flex;
+  min-height: 100vh;
+}
+
+.add-section {
+  margin-top: 90px;
+  margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+  color: aliceblue;
+  justify-content: center;
+}
+
+.form-preview {
+  width: 85%;
+  display: flex;
+  background-color: rgba(27, 14, 59, 0.801);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+  width: 50%;
+  padding: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.checkboxesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkboxesContainer>label {
+  display: flex;
+  margin: 10px;
+}
+
+.btn-field {
+  margin-top: 20px;
+}
+
+.preview {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+#coverImage {
+  aspect-ratio: 9 / 13;
+  width: 230px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-top: 60px;
+}
+
+#coverImage>img {
+  width: 230px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3px;
+  display: none;
+}
+
+.animeDescriptionContainer {
+  width: 100%;
+  align-content: start;
+}
+
+#previewAnimeDescription {
+  white-space: pre-line;
+}
+
+#form-addAnime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

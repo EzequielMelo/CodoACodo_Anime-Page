@@ -61,7 +61,7 @@
         <div class="info-anime-video">
           <div class="info-aditional">
             <ul>
-              <li>Género: {{anime.generos}}</li>
+              <li>Género: {{#each anime.generos}} -{{this}} {{/each}}</li>
               <li>Año: {{anime.anio}}</li>
               <li>Duración: {{anime.cantidad_episodios}} episodios</li>
               <li>Valoracion usuarios de Anime Project: {{porcentajeRecomendado}}</li>
