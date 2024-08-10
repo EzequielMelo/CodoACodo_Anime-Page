@@ -49,11 +49,20 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            location.reload(); // Recargar la página para ver el nuevo anime
-          } else {
+            addAnime.reset();
+
+            // Mostrar un mensaje de éxito
             Swal.fire({
               position: "top-end",
               icon: "success",
+              title: "Anime añadido exitosamente",
+              showConfirmButton: false,
+              timer: 1500
+            });
+          } else {
+            Swal.fire({
+              position: "top-end",
+              icon: "error", //cambiar por error
               title: (data.message),
               showConfirmButton: false,
               timer: 1500
@@ -62,6 +71,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => {
           console.error('Error al añadir anime:', error);
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Error al añadir anime",
+            showConfirmButton: false,
+            timer: 1500
+          });
         });
     });
   }

@@ -35,9 +35,10 @@ router.post('/', isAuthenticated, isAdmin, upload.fields([{ name: 'portada' }, {
     console.log(req.files); // Debería mostrar los archivos subidos
     console.log(req.body); // Debería mostrar los otros datos del formulario // Esto debería mostrar todos los archivos recibidos
     let { nombre, descripcion, linkTrailer, anio, enemision, generosSeleccionados } = req.body;
-    let enEmision = parseInt(enemision, 10);
+    let enEmision = req.body.enemision !== undefined ? parseInt(req.body.enemision, 10) : 0;
+
     if (isNaN(enEmision)) {
-      enEmision = 0; // Si parseInt no puede convertir, se asigna 0 como valor por defecto.
+      enEmision = 0; // Si no es un número, asegurarse de que sea 0
     }
     const portadaFileName = req.files && req.files.portada ? req.files.portada[0].originalname : null;
     const portadaInicioFileName = req.files && req.files.portadaInicio ? req.files.portadaInicio[0].originalname : null;
@@ -74,7 +75,7 @@ router.post('/', isAuthenticated, isAdmin, upload.fields([{ name: 'portada' }, {
     // Insertar el nuevo anime en la base de datos
     const result = await connection.promise().query(
       `INSERT INTO animes (nombre, descripcion, portada, portadaprincipal, trailerprincipal, anio, enemision) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [nombre, descripcion, portadaFileName, portadaInicioFileName, linkTrailer, anio, enEmision || null]
+      [nombre, descripcion, portadaFileName, portadaInicioFileName, linkTrailer, anio, enEmision]
     );
     const animeId = result[0].insertId;
 
@@ -88,7 +89,7 @@ router.post('/', isAuthenticated, isAdmin, upload.fields([{ name: 'portada' }, {
       }
     }
 
-    res.redirect('/adminAddAnime');
+    res.json({ success: true, message: 'Anime añadido exitosamente' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: 'Error en el servidor' });
