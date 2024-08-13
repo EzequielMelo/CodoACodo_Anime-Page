@@ -19,6 +19,7 @@
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.10.2",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "webtorrent": "^2.5.0"
   }
 }
