@@ -1,0 +1,163 @@
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.dashboard {
+  width: 100%;
+  margin: 100px 20px 70px 20px;
+  color: aliceblue;
+}
+
+.angry-grid {
+  display: grid;
+
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  gap: 10px;
+  height: 100%;
+
+}
+
+#item-0 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.admin-image>img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1.5px solid black;
+}
+
+.admin-data {
+  text-align: center;
+}
+
+#item-1 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-row-end: 2;
+  grid-column-end: 5;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-tittle>img {
+  width: 130px;
+  height: auto;
+  border-radius: 2%;
+}
+
+.admin-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-data>a {
+  font-size: 1.5em;
+  text-align: start;
+  text-decoration: none;
+  color: azure;
+}
+
+.admin-data>a:hover {
+  color: rgb(255, 64, 96)
+}
+
+#item-2 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 1;
+  grid-column-start: 5;
+
+  grid-row-end: 2;
+  grid-column-end: 7;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+#item-3 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 2;
+  grid-column-start: 1;
+
+  grid-row-end: 3;
+  grid-column-end: 4;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+#item-4 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 2;
+  grid-column-start: 4;
+
+  grid-row-end: 3;
+  grid-column-end: 7;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+#item-5 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 3;
+  grid-column-start: 1;
+
+  grid-row-end: 4;
+  grid-column-end: 4;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+#item-6 {
+
+  background-color: rgba(11, 18, 21, 0.87);
+  grid-row-start: 3;
+  grid-column-start: 4;
+
+  grid-row-end: 4;
+  grid-column-end: 7;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
