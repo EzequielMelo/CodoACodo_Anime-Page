@@ -75,7 +75,7 @@ La plataforma simula un sitio de reseñas y comunidad, permitiendo a los usuario
 
 ### Página principal
 
-![Página principal](./assets/Anime-index.png)
+![Página principal](./public/images/Anime-index.png)
 
 _(El repositorio incluye imágenes adicionales de las distintas secciones del sitio)_
 
